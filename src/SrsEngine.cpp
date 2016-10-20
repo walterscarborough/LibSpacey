@@ -5,15 +5,12 @@
 
 Flashcard SrsEngine::gradeFlashcard(Flashcard flashcard, unsigned int grade) {
 
-    float newEasinessFactor = 0;
-    std::time_t nextDate;
-
     if (grade < 3) {
         flashcard.setRepetitionCount(0);
-        flashcard.setInterval(0);
+        flashcard.setInterval(1);
     }
     else {
-        newEasinessFactor = flashcard.getEasinessFactor() + (0.1 - (5 - grade) * (0.08 +(5 - grade) * 0.02));
+        float newEasinessFactor = flashcard.getEasinessFactor() + (0.1 - (5 - grade) * (0.08 + (5 - grade) * 0.02));
 
         if (newEasinessFactor < 1.3) {
             flashcard.setEasinessFactor(1.3);
