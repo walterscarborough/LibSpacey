@@ -25,12 +25,12 @@ void Flashcard::setBack(std::string back) {
     this->back = back;
 }
 
-unsigned int Flashcard::getRepetitionCount(){
-    return this->repetitionCount;
+unsigned int Flashcard::getRepetition(){
+    return this->repetition;
 }
 
-void Flashcard::setRepetitionCount(unsigned int repetitionCount){
-    this->repetitionCount = repetitionCount;
+void Flashcard::setRepetition(unsigned int repetition){
+    this->repetition = repetition;
 }
 
 unsigned int Flashcard::getInterval() {

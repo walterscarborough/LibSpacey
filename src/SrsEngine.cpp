@@ -5,40 +5,34 @@
 
 Flashcard SrsEngine::gradeFlashcard(Flashcard flashcard, unsigned int grade) {
 
-    if (grade < 3) {
-        flashcard.setRepetitionCount(0);
-        flashcard.setInterval(1);
-    }
-    else {
-        float newEasinessFactor = flashcard.getEasinessFactor() + (0.1 - (5 - grade) * (0.08 + (5 - grade) * 0.02));
-
-        if (newEasinessFactor < 1.3) {
-            flashcard.setEasinessFactor(1.3);
+    if (grade >= 3) {
+        if (flashcard.getRepetition() == 0) {
+            flashcard.setInterval(1);
+            flashcard.setRepetition(1);
+        }
+        else if (flashcard.getRepetition() == 1) {
+            flashcard.setInterval(6);
+            flashcard.setRepetition(2);
         }
         else {
-            flashcard.setEasinessFactor(newEasinessFactor);
-        }
+            float newInterval = ceil(flashcard.getInterval() * flashcard.getEasinessFactor());
+            flashcard.setInterval(newInterval);
 
-        flashcard.setRepetitionCount(flashcard.getRepetitionCount() + 1);
-
-        switch(flashcard.getRepetitionCount()) {
-            case 1:
-                flashcard.setInterval(1);
-                break;
-
-            case 2:
-                flashcard.setInterval(6);
-                break;
-
-            default:
-                float newInterval = ceil((flashcard.getRepetitionCount() - 1) * flashcard.getEasinessFactor());
-                flashcard.setInterval(newInterval);
-                break;
+            flashcard.setRepetition(flashcard.getRepetition() + 1);
         }
     }
+    else {
+        flashcard.setRepetition(0);
+        flashcard.setInterval(1);
+    }
 
-    if (grade == 3) {
-        flashcard.setInterval(0);
+    float newEasinessFactor = flashcard.getEasinessFactor() + (0.1 - (5 - grade) * (0.08 + (5 - grade) * 0.02));
+
+    if (newEasinessFactor < 1.3) {
+        flashcard.setEasinessFactor(1.3);
+    }
+    else {
+        flashcard.setEasinessFactor(newEasinessFactor);
     }
 
     std::chrono::system_clock::time_point today = std::chrono::system_clock::now();

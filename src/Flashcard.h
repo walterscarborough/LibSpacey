@@ -9,7 +9,7 @@ class Flashcard {
 private:
     std::string front;
     std::string back;
-    unsigned int repetitionCount = 0;
+    unsigned int repetition = 0;
     unsigned int interval = 0;
     float easinessFactor = 2.5;
     std::chrono::system_clock::time_point previousDate = std::chrono::system_clock::now();
@@ -25,8 +25,8 @@ public:
     std::string getBack();
     void setBack(std::string back);
 
-    unsigned int getRepetitionCount();
-    void setRepetitionCount(unsigned int repetitionCount);
+    unsigned int getRepetition();
+    void setRepetition(unsigned int repetition);
 
     unsigned int getInterval();
     void setInterval(unsigned int interval);

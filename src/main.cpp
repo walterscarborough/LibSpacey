@@ -12,7 +12,7 @@ int main() {
 
     newCard.setEasinessFactor(10);
     newCard.setInterval(3);
-    newCard.setRepetitionCount(2);
+    newCard.setRepetition(2);
 
     std::cout << newCard.getFront() << std::endl;
 
@@ -21,7 +21,7 @@ int main() {
     newCard = engine.gradeFlashcard(newCard, 5);
 
     std::cout << "interval is: " << newCard.getInterval() << std::endl;
-    std::cout << "repCount is: " << newCard.getRepetitionCount() << std::endl;
+    std::cout << "repCount is: " << newCard.getRepetition() << std::endl;
     std::cout << "easinessFactor is: " << newCard.getEasinessFactor() << std::endl;
 
     time_t prevDate = std::chrono::system_clock::to_time_t(newCard.getPreviousDate());
