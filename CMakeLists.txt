@@ -17,6 +17,9 @@ add_executable(flashcardEngineApp ${SOURCES})
 # Source Files for Tests
 include_directories(test)
 file(GLOB TEST_SOURCES "test/*.cpp")
-add_executable(run_test ${TEST_SOURCES})
 
+set(NON_MAIN_SOURCES ${SOURCES})
+list(REMOVE_ITEM NON_MAIN_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp)
+
+add_executable(run_test ${NON_MAIN_SOURCES} ${TEST_SOURCES})
 target_link_libraries(run_test ${CONAN_LIBS})

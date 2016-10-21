@@ -2,7 +2,7 @@
 #include <chrono>
 #include "gtest/gtest.h"
 
-#include "flashcard.cpp"
+#include "flashcard.h"
 
 TEST(flashcard, front_getter_setter) {
     
@@ -71,9 +71,4 @@ TEST(flashcard, nextDate_getter_setter) {
 
 
     EXPECT_EQ(card.getNextDate(), today);
-}
-
-int main(int argc, char **argv) {
-    testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
 }
