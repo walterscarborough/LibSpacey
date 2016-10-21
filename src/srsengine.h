@@ -2,7 +2,7 @@
 #define LIBSPACEY_SRSENGINE_H
 
 
-#include "Flashcard.h"
+#include "flashcard.h"
 
 class SrsEngine {
 

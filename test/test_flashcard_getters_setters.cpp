@@ -1,7 +1,7 @@
 #include <iostream>
 #include "gtest/gtest.h"
 
-#include "Flashcard.cpp"
+#include "flashcard.cpp"
 
 TEST(flashcard, front_getter_setter) {
     

@@ -1,7 +1,7 @@
 #include <iostream>
 
-#include "Flashcard.h"
-#include "SrsEngine.h"
+#include "flashcard.h"
+#include "srsengine.h"
 
 int main() {
 
