@@ -8,9 +8,8 @@ LibSpacey uses cmake to handle building and compilation, and [conan](https://git
 
 ### Build / Run Guide
 
-1.) Build App
+1.) Use this script to boostrap and build the app
 ```
-# Run this script to boostrap and build LibSpacey
 ./bootstrap.sh
 ```
 
