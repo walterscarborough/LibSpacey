@@ -4,38 +4,26 @@ This is a small C++ implementation of the [Supermemo SM2 algorithm](https://www.
 
 ## Installation
 
-LibSpacey uses cmake to handle building and compilation.
+LibSpacey uses cmake to handle building and compilation, and [conan](https://github.com/conan-io/conan) for C++ package management.
 
-1.) Build Dependencies w/ Conan
+### Build / Run Guide
 
+1.) Build App
 ```
-mkdir build
-
-cd build 
-
-conan install --file ../conanfile.txt --build gtest .
-
-cd build
+# Run this script to boostrap and build LibSpacey
+./bootstrap.sh
 ```
 
-2.) Build app w/ cmake
+2.) Run app
 
 ```
-cmake ..
-
-make
+./build/bin/flashcardEngineApp
 ```
 
-3.) Run app
+3.) (optional) Run tests
 
 ```
-./bin/flashcardEngineApp
-```
-
-4.) (optional) Run tests
-
-```
-./bin/run_tests
+./build/bin/run_tests
 ```
 
 ## Contributions
