@@ -12,8 +12,9 @@ private:
     unsigned int repetition = 0;
     unsigned int interval = 0;
     float easinessFactor = 2.5;
-    std::chrono::system_clock::time_point previousDate = std::chrono::system_clock::now();
-    std::chrono::system_clock::time_point nextDate = std::chrono::system_clock::now();
+
+    unsigned long long previousDate = std::chrono::system_clock::now().time_since_epoch() / std::chrono::seconds(1);
+    unsigned long long nextDate = std::chrono::system_clock::now().time_since_epoch() / std::chrono::seconds(1);
 
 public:
     Flashcard();
@@ -34,11 +35,11 @@ public:
     float getEasinessFactor();
     void setEasinessFactor(float easinessFactor);
 
-    std::chrono::system_clock::time_point getPreviousDate();
-    void setPreviousDate(std::chrono::system_clock::time_point previousDate);
+    unsigned long long getPreviousDate();
+    void setPreviousDate(unsigned long long previousDate);
 
-    std::chrono::system_clock::time_point getNextDate();
-    void setNextDate(std::chrono::system_clock::time_point nextDate);
+    unsigned long long getNextDate();
+    void setNextDate(unsigned long long nextDate);
 };
 
 

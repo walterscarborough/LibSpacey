@@ -16,20 +16,19 @@ int main() {
 
     std::cout << newCard.getFront() << std::endl;
 
+    unsigned long long currentDate = std::chrono::system_clock::now().time_since_epoch() / std::chrono::seconds(1);
     SrsEngine engine = SrsEngine();
-
-    newCard = engine.gradeFlashcard(newCard, 5);
+    newCard = engine.gradeFlashcard(newCard, 5, currentDate);
 
     std::cout << "interval is: " << newCard.getInterval() << std::endl;
     std::cout << "repCount is: " << newCard.getRepetition() << std::endl;
     std::cout << "easinessFactor is: " << newCard.getEasinessFactor() << std::endl;
 
-    time_t prevDate = std::chrono::system_clock::to_time_t(newCard.getPreviousDate());
-    time_t nextDate = std::chrono::system_clock::to_time_t(newCard.getNextDate());
+    unsigned long long prevDate = newCard.getPreviousDate();
+    unsigned long long nextDate = newCard.getNextDate();
 
-
-    std::cout << "prevDate is: " << ctime(&prevDate) << std::endl;
-    std::cout << "nextDate is: " << ctime(&nextDate) << std::endl;
+    std::cout << "prevDate is: " << prevDate << std::endl;
+    std::cout << "nextDate is: " << nextDate << std::endl;
 
     return 0;
 }

@@ -5,7 +5,7 @@
 #include "flashcard.h"
 
 TEST(flashcard, front_getter_setter) {
-    
+
     Flashcard card = Flashcard();
     card.setFront("I am a flashcard.");
 
@@ -14,7 +14,7 @@ TEST(flashcard, front_getter_setter) {
 }
 
 TEST(flashcard, back_getter_setter) {
-    
+
     Flashcard card = Flashcard();
     card.setBack("I am a reversed flashcard!");
 
@@ -23,7 +23,7 @@ TEST(flashcard, back_getter_setter) {
 }
 
 TEST(flashcard, repetition_getter_setter) {
-    
+
     Flashcard card = Flashcard();
     card.setRepetition(5);
 
@@ -32,7 +32,7 @@ TEST(flashcard, repetition_getter_setter) {
 }
 
 TEST(flashcard, interval_getter_setter) {
-    
+
     Flashcard card = Flashcard();
     card.setInterval(4);
 
@@ -41,7 +41,7 @@ TEST(flashcard, interval_getter_setter) {
 }
 
 TEST(flashcard, easinessFactor_getter_setter) {
-    
+
     float easinessFactor = 3.52;
 
     Flashcard card = Flashcard();
@@ -52,23 +52,23 @@ TEST(flashcard, easinessFactor_getter_setter) {
 }
 
 TEST(flashcard, previousDate_getter_setter) {
-    
-    std::chrono::system_clock::time_point today = std::chrono::system_clock::now();
+
+    unsigned long long october_23_2016 = 1477207892;
 
     Flashcard card = Flashcard();
-    card.setPreviousDate(today);
+    card.setPreviousDate(october_23_2016);
 
 
-    EXPECT_EQ(card.getPreviousDate(), today);
+    EXPECT_EQ(card.getPreviousDate(), october_23_2016);
 }
 
 TEST(flashcard, nextDate_getter_setter) {
-    
-    std::chrono::system_clock::time_point today = std::chrono::system_clock::now();
+
+    unsigned long long october_23_2016 = 1477207892;
 
     Flashcard card = Flashcard();
-    card.setNextDate(today);
+    card.setNextDate(october_23_2016);
 
 
-    EXPECT_EQ(card.getNextDate(), today);
+    EXPECT_EQ(card.getNextDate(), october_23_2016);
 }

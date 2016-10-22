@@ -25,11 +25,11 @@ void Flashcard::setBack(std::string back) {
     this->back = back;
 }
 
-unsigned int Flashcard::getRepetition(){
+unsigned int Flashcard::getRepetition() {
     return this->repetition;
 }
 
-void Flashcard::setRepetition(unsigned int repetition){
+void Flashcard::setRepetition(unsigned int repetition) {
     this->repetition = repetition;
 }
 
@@ -37,30 +37,30 @@ unsigned int Flashcard::getInterval() {
     return this->interval;
 }
 
-void Flashcard::setInterval(unsigned int interval){
+void Flashcard::setInterval(unsigned int interval) {
     this->interval = interval;
 }
 
-float Flashcard::getEasinessFactor(){
+float Flashcard::getEasinessFactor() {
     return this->easinessFactor;
 }
 
-void Flashcard::setEasinessFactor(float easinessFactor){
+void Flashcard::setEasinessFactor(float easinessFactor) {
     this->easinessFactor = easinessFactor;
 }
 
-std::chrono::system_clock::time_point Flashcard::getPreviousDate(){
+unsigned long long Flashcard::getPreviousDate() {
     return this->previousDate;
 }
 
-void Flashcard::setPreviousDate(std::chrono::system_clock::time_point previousDate){
+void Flashcard::setPreviousDate(unsigned long long previousDate) {
     this->previousDate = previousDate;
 }
 
-std::chrono::system_clock::time_point Flashcard::getNextDate(){
+unsigned long long Flashcard::getNextDate() {
     return this->nextDate;
 }
 
-void Flashcard::setNextDate(std::chrono::system_clock::time_point nextDate){
+void Flashcard::setNextDate(unsigned long long nextDate) {
     this->nextDate = nextDate;
 }

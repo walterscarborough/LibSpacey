@@ -7,7 +7,7 @@
 class SrsEngine {
 
 public:
-    Flashcard gradeFlashcard(Flashcard flashcard, unsigned int grade);
+    Flashcard gradeFlashcard(Flashcard flashcard, unsigned int grade, unsigned long long currentDatetime);
 };
 
 
