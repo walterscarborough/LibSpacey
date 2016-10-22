@@ -1,15 +1,8 @@
-//
-//  FlashcardService.m
-//  LibSpacey
-//
-//  Created by Walter Scarborough on 2016/10/22.
-//  Copyright © 2016年 Inanimate Studios. All rights reserved.
-//
-
 #import "FlashcardGrader.h"
-#import "GradeableFlashcard.h"
 #import "flashcard.h"
 #import "srsengine.h"
+
+#import <LibSpacey/LibSpacey-Swift.h>
 
 @interface FlashcardGrader()
 
@@ -42,7 +35,7 @@
     Flashcard regularFlashcard = Flashcard();
     regularFlashcard.setRepetition((unsigned int)gradeableFlashcard.repetition);
     regularFlashcard.setInterval((unsigned int)gradeableFlashcard.interval);
-    regularFlashcard.setEasinessFactor(gradeableFlashcard.easinessFactor.floatValue);
+    regularFlashcard.setEasinessFactor(gradeableFlashcard.easinessFactor);
     
     regularFlashcard.setPreviousDate(gradeableFlashcard.previousDate.timeIntervalSince1970);
     regularFlashcard.setNextDate(gradeableFlashcard.nextDate.timeIntervalSince1970);
@@ -55,7 +48,7 @@
     GradeableFlashcard *gradeableFlashcard = [[GradeableFlashcard alloc] init];
     gradeableFlashcard.repetition = regularFlashcard.getRepetition();
     gradeableFlashcard.interval = regularFlashcard.getInterval();
-    gradeableFlashcard.easinessFactor = [NSNumber numberWithFloat:regularFlashcard.getEasinessFactor()];
+    gradeableFlashcard.easinessFactor = regularFlashcard.getEasinessFactor();
     gradeableFlashcard.previousDate = [NSDate dateWithTimeIntervalSince1970:regularFlashcard.getPreviousDate()];
     gradeableFlashcard.nextDate = [NSDate dateWithTimeIntervalSince1970:regularFlashcard.getNextDate()];
 

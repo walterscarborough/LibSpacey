@@ -1,11 +1,3 @@
-//
-//  LibSpaceyTests.swift
-//  LibSpaceyTests
-//
-//  Created by Walter Scarborough on 2016/10/22.
-//  Copyright © 2016年 Inanimate Studios. All rights reserved.
-//
-
 import XCTest
 @testable import LibSpacey
 

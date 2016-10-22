@@ -16,8 +16,7 @@
 		D1775DF01DBB690E0024B476 /* srsengine.h in Headers */ = {isa = PBXBuildFile; fileRef = D1775DEC1DBB690E0024B476 /* srsengine.h */; };
 		D1775DF31DBB693D0024B476 /* FlashcardGrader.h in Headers */ = {isa = PBXBuildFile; fileRef = D1775DF11DBB693D0024B476 /* FlashcardGrader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D1775DF41DBB693D0024B476 /* FlashcardGrader.mm in Sources */ = {isa = PBXBuildFile; fileRef = D1775DF21DBB693D0024B476 /* FlashcardGrader.mm */; };
-		D1775E021DBB76460024B476 /* GradeableFlashcard.h in Headers */ = {isa = PBXBuildFile; fileRef = D1775E001DBB76460024B476 /* GradeableFlashcard.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D1775E031DBB76460024B476 /* GradeableFlashcard.m in Sources */ = {isa = PBXBuildFile; fileRef = D1775E011DBB76460024B476 /* GradeableFlashcard.m */; };
+		D1775E061DBB89A90024B476 /* GradeableFlashcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1775E051DBB89A90024B476 /* GradeableFlashcard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,8 +43,7 @@
 		D1775DF11DBB693D0024B476 /* FlashcardGrader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashcardGrader.h; sourceTree = "<group>"; };
 		D1775DF21DBB693D0024B476 /* FlashcardGrader.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FlashcardGrader.mm; sourceTree = "<group>"; };
 		D1775DF61DBB6D350024B476 /* LibSpaceyTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LibSpaceyTests-Bridging-Header.h"; sourceTree = "<group>"; };
-		D1775E001DBB76460024B476 /* GradeableFlashcard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradeableFlashcard.h; sourceTree = "<group>"; };
-		D1775E011DBB76460024B476 /* GradeableFlashcard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradeableFlashcard.m; sourceTree = "<group>"; };
+		D1775E051DBB89A90024B476 /* GradeableFlashcard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradeableFlashcard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,8 +127,7 @@
 				D1775DD11DBB68DD0024B476 /* LibSpacey.h */,
 				D1775DF11DBB693D0024B476 /* FlashcardGrader.h */,
 				D1775DF21DBB693D0024B476 /* FlashcardGrader.mm */,
-				D1775E001DBB76460024B476 /* GradeableFlashcard.h */,
-				D1775E011DBB76460024B476 /* GradeableFlashcard.m */,
+				D1775E051DBB89A90024B476 /* GradeableFlashcard.swift */,
 			);
 			name = Public;
 			sourceTree = "<group>";
@@ -152,7 +149,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1775DDF1DBB68DD0024B476 /* LibSpacey.h in Headers */,
-				D1775E021DBB76460024B476 /* GradeableFlashcard.h in Headers */,
 				D1775DF31DBB693D0024B476 /* FlashcardGrader.h in Headers */,
 				D1775DF01DBB690E0024B476 /* srsengine.h in Headers */,
 				D1775DEE1DBB690E0024B476 /* flashcard.h in Headers */,
@@ -210,6 +206,7 @@
 				TargetAttributes = {
 					D1775DCD1DBB68DD0024B476 = {
 						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 					D1775DD61DBB68DD0024B476 = {
@@ -261,8 +258,8 @@
 			files = (
 				D1775DEF1DBB690E0024B476 /* srsengine.cpp in Sources */,
 				D1775DED1DBB690E0024B476 /* flashcard.cpp in Sources */,
-				D1775E031DBB76460024B476 /* GradeableFlashcard.m in Sources */,
 				D1775DF41DBB693D0024B476 /* FlashcardGrader.mm in Sources */,
+				D1775E061DBB89A90024B476 /* GradeableFlashcard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +384,7 @@
 		D1775DE31DBB68DD0024B476 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -398,6 +396,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.InanimateStudios.LibSpacey;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -405,6 +404,7 @@
 		D1775DE41DBB68DD0024B476 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -423,6 +423,7 @@
 		D1775DE61DBB68DD0024B476 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = LibSpaceyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -437,6 +438,7 @@
 		D1775DE71DBB68DD0024B476 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = LibSpaceyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
