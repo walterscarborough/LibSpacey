@@ -1,8 +1,10 @@
 language:
   - cpp
 
+sudo: required
+
 install:
-  - pip install conan
+  - sudo pip install conan
 
 script:
   - ./bootstrap.sh
