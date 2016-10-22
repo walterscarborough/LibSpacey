@@ -1,6 +1,6 @@
 # Project and General Cmake Setup
 project(LibSpacey)
-cmake_minimum_required(VERSION 3.6)
+cmake_minimum_required(VERSION 2.8.7)
 
 # Conan Setup
 include(build/conanbuildinfo.cmake)

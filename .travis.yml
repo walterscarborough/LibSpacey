@@ -3,7 +3,4 @@ language:
 
 script:
   - ./bootstrap.sh
-  - cd build
-  - cmake ..
-  - make
-  - ./bin/run_tests
+  - ./build/bin/run_tests
