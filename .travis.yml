@@ -1,6 +1,9 @@
 language:
   - cpp
 
+install:
+  - pip install conan
+
 script:
   - ./bootstrap.sh
   - ./build/bin/run_tests
