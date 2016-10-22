@@ -1,0 +1,9 @@
+language:
+  - cpp
+
+script:
+  - ./bootstrap.sh
+  - cd build
+  - cmake ..
+  - make
+  - ./bin/run_tests
