@@ -36,7 +36,7 @@ LibSpacey uses cmake to handle building and compilation, and [conan](https://git
 3.) (optional) Run tests
 
 ```
-./build/bin/run_tests
+./build/bin/run_test
 ```
 
 ## Contributions
