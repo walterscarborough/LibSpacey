@@ -1,42 +1,49 @@
 #include <cmath>
 #include <chrono>
 #include <iostream>
+#include <cmath>
 #include "srsengine.h"
 
-Flashcard SrsEngine::gradeFlashcard(Flashcard flashcard, unsigned int grade, unsigned long long currentDatetime) {
+Flashcard SrsEngine::gradeFlashcard(
+    Flashcard flashcard,
+    unsigned int grade,
+    unsigned long long currentDatetime
+) {
 
-    if (grade < 3) {
-        flashcard.setRepetition(0);
-        flashcard.setInterval(0);
-    }
-    else {
-        float newEasinessFactor = flashcard.getEasinessFactor() + (0.1 - (5 - grade) * (0.08 + (5 - grade) * 0.02));
-
-        if (newEasinessFactor < 1.3) {
-            flashcard.setEasinessFactor(1.3);
-        }
-        else {
-            flashcard.setEasinessFactor(newEasinessFactor);
-        }
-
-        flashcard.setRepetition(flashcard.getRepetition() + 1);
-
-        switch(flashcard.getRepetition()) {
-            case 1:
+    if (grade >= 3) {
+        switch (flashcard.getRepetition()) {
+            case 0:
                 flashcard.setInterval(1);
+                flashcard.setRepetition(1);
                 break;
-            case 2:
+            case 1:
                 flashcard.setInterval(6);
+                flashcard.setRepetition(2);
                 break;
             default:
-                int newInterval = ceil((flashcard.getRepetition() - 1) * flashcard.getEasinessFactor());
+                auto newInterval = static_cast<unsigned int>(
+                    std::round(
+                        flashcard.getInterval() - 1 * flashcard.getEasinessFactor()
+                    )
+                );
                 flashcard.setInterval(newInterval);
+                flashcard.setRepetition(flashcard.getRepetition() + 1);
                 break;
         }
+    } else {
+        flashcard.setInterval(1);
+        flashcard.setRepetition(0);
     }
 
-    if (grade == 3) {
-        flashcard.setInterval(0);
+    auto newEasinessFactor = static_cast<float>(
+        flashcard.getEasinessFactor()
+        + (0.1 - (5 - grade) * (0.08 + (5 - grade) * 0.02))
+    );
+
+    if (newEasinessFactor < 1.3) {
+        flashcard.setEasinessFactor(1.3);
+    } else {
+        flashcard.setEasinessFactor(newEasinessFactor);
     }
 
     unsigned int seconds = 60;
@@ -50,6 +57,5 @@ Flashcard SrsEngine::gradeFlashcard(Flashcard flashcard, unsigned int grade, uns
     flashcard.setPreviousDate(flashcard.getNextDate());
     flashcard.setNextDate(newNextDatetime);
 
-    //std::cout << "extraDays are: " << extraDays << std::endl;
     return flashcard;
 }

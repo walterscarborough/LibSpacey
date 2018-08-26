@@ -10,7 +10,7 @@ private:
     std::string front;
     std::string back;
     unsigned int repetition = 0;
-    unsigned int interval = 0;
+    unsigned int interval = 1;
     float easinessFactor = 2.5;
 
     unsigned long long previousDate = std::chrono::system_clock::now().time_since_epoch() / std::chrono::seconds(1);
