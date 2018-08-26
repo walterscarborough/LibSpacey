@@ -2,12 +2,16 @@
 project(LibSpacey)
 cmake_minimum_required(VERSION 2.8.7)
 
-# Conan Setup
-include(build/conanbuildinfo.cmake)
-conan_basic_setup()
-
 # Compiler Flags
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+set(CMAKE_CXX_STANDARD 14)
+
+# Conan Setup
+if (EXISTS ${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+    include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+    conan_basic_setup()
+else ()
+    message(WARNING "The file conanbuildinfo.cmake doesn't exist, you have to run conan install first")
+endif ()
 
 # Source Files for App
 include_directories(src)

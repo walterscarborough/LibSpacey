@@ -1,9 +1,9 @@
 import Foundation
 
 public class GradeableFlashcard: NSObject {
-    public var repetition = 0
-    public var interval: UInt = 0
-    public var easinessFactor = 2.5
-    public var previousDate = NSDate()
-    public var nextDate = NSDate()
+    @objc public var repetition = 0
+    @objc public var interval: UInt = 0
+    @objc public var easinessFactor = 2.5
+    @objc public var previousDate = NSDate()
+    @objc public var nextDate = NSDate()
 }

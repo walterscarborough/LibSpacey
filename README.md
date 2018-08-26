@@ -22,21 +22,20 @@ LibSpacey uses cmake to handle building and compilation, and [conan](https://git
 
 ### Build / Run Guide
 
-1.) Use this script to boostrap and build the app
+1.) Build app
 ```
-./bootstrap.sh
-```
-
-2.) Run app
-
-```
-./build/bin/flashcardEngineApp
+./scripts/build.sh
 ```
 
-3.) (optional) Run tests
+2.) Run tests
+```
+./scripts/test.sh
+```
+
+3.) (optional) Run sample app
 
 ```
-./build/bin/run_test
+./cmake-build-debug/bin/flashcardEngineApp
 ```
 
 ## Contributions
