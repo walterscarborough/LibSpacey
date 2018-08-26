@@ -13,7 +13,7 @@ LibSpacey can be added to your xcode project via [carthage](https://github.com/C
 Just add this line to your cartfile:
 
 ```
-github "walterscarborough/LibSpacey" "<current-tagged-release>"
+github "walterscarborough/LibSpacey" "1.1.0"
 ```
 
 ## Using in Other C++ Projects
