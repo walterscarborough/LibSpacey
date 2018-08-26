@@ -1,12 +1,11 @@
+#include <utility>
 #include "flashcard.h"
 
-Flashcard::Flashcard(void) {
-
-}
+Flashcard::Flashcard() = default;
 
 Flashcard::Flashcard(std::string front, std::string back) {
-    this->setFront(front);
-    this->setBack(back);
+    this->setFront(std::move(front));
+    this->setBack(std::move(back));
 }
 
 std::string Flashcard::getFront() {
@@ -14,7 +13,7 @@ std::string Flashcard::getFront() {
 }
 
 void Flashcard::setFront(std::string front) {
-    this->front = front;
+    this->front = std::move(front);
 }
 
 std::string Flashcard::getBack() {
@@ -22,7 +21,7 @@ std::string Flashcard::getBack() {
 }
 
 void Flashcard::setBack(std::string back) {
-    this->back = back;
+    this->back = std::move(back);
 }
 
 unsigned int Flashcard::getRepetition() {

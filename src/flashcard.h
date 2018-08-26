@@ -13,8 +13,12 @@ private:
     unsigned int interval = 1;
     float easinessFactor = 2.5;
 
-    unsigned long long previousDate = std::chrono::system_clock::now().time_since_epoch() / std::chrono::seconds(1);
-    unsigned long long nextDate = std::chrono::system_clock::now().time_since_epoch() / std::chrono::seconds(1);
+    unsigned long long previousDate = static_cast<unsigned long long int>(
+        std::chrono::system_clock::now().time_since_epoch() / std::chrono::seconds(1)
+    );
+    unsigned long long nextDate = static_cast<unsigned long long int>(
+        std::chrono::system_clock::now().time_since_epoch() / std::chrono::seconds(1)
+    );
 
 public:
     Flashcard();
@@ -42,5 +46,4 @@ public:
     void setNextDate(unsigned long long nextDate);
 };
 
-
-#endif //LIBSPACEY_FLASHCARD_H
+#endif
