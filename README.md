@@ -16,6 +16,19 @@ Just add this line to your cartfile:
 github "walterscarborough/LibSpacey" "1.1.0"
 ```
 
+## Building Locally with Carthage
+
+Carthage can automatically build frameworks locally.
+It does this by searching recursively for a `.xcodeproj` file and building it.
+
+Just run this command from the LibSpacey repo top level directory: 
+
+```
+carthage build --archive
+```
+
+It will output a `LibSpacey.framework.zip` file in the top level directory.
+
 ## Using in Other C++ Projects
 
 LibSpacey uses cmake to handle building and compilation, and [conan](https://github.com/conan-io/conan) for C++ package management.
