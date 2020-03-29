@@ -3,23 +3,19 @@
 function go_to_project_top_directory() {
   local -r script_dir=$(dirname "${BASH_SOURCE[0]}")
 
-  cd "$script_dir/.." || exit 1
+  cd "$script_dir/../.." || exit 1
 }
 
 function run_bash_linter() {
+  pushd common || exit 1
   shellcheck -x scripts/*.sh
-}
-
-function run_clang_tidy_check() {
-  pushd src || exit 1
-  bash -c "clang-tidy --warnings-as-errors=* -checks=modernize*,cppcoreguidelines*,clang-analyzer*,hicpp*,portability*,readability* -header-filter=.* *.cpp -- -std=c++17"
   popd || exit 1
 }
 
-function display_success_message() {
-  local -r green_color_code='\033[1;32m'
-  local -r default_color_code='\033[00m'
-  echo -e "${green_color_code}\\nLinters ran successfully 🧹 ${default_color_code} \\n"
+function run_clang_tidy_check() {
+  pushd common/src || exit 1
+  bash -c "clang-tidy --warnings-as-errors=* -checks=modernize*,cppcoreguidelines*,clang-analyzer*,hicpp*,portability*,readability* -header-filter=.* *.cpp -- -std=c++17"
+  popd || exit 1
 }
 
 function main() {
