@@ -1,28 +1,18 @@
 #!/usr/bin/env bash
 
-function go_to_root_directory() {
-    cd `git rev-parse --show-toplevel`
-}
-
-function build_library() {
-    ./scripts/build.sh
-}
-
-function run_tests() {
-    ./scripts/test.sh
-}
-
 function push_code() {
-    git push
+  git push
 }
 
 function main() {
-    go_to_root_directory
+  go_to_project_top_directory
+  source ./scripts/shared/shared.sh || exit 1
+  shared.set_bash_error_handling
 
-    build_library
-    run_tests
+  ./scripts/build.sh
+  ./scripts/test.sh
 
-    push_code
+  push_code
 }
 
-main "$@"
+main

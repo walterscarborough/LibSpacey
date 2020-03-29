@@ -45,6 +45,11 @@ LibSpacey uses cmake to handle building and compilation, and [conan](https://git
 ./scripts/test.sh
 ```
 
+3.) Run linters
+```
+./scripts/lint.sh
+```
+
 3.) (optional) Run sample app
 
 ```

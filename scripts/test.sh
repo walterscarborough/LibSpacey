@@ -1,26 +1,33 @@
 #!/usr/bin/env bash
 
-function go_to_root_directory() {
-    cd `git rev-parse --show-toplevel`
+function go_to_project_top_directory() {
+  local -r script_dir=$(dirname "${BASH_SOURCE[0]}")
+
+  cd "$script_dir/.." || exit 1
 }
 
 function build_library() {
-    go_to_root_directory
-    cd cmake-build-debug
-    cmake ../
-    make
-    go_to_root_directory
+  pushd cmake-build-debug || exit 1
+  cmake ../
+  make
+  popd || exit 1
 }
 
 function run_tests() {
-    go_to_root_directory
-    cd cmake-build-debug/bin
-    ./run_test
+  pushd cmake-build-debug/bin || exit 1
+  ./run_test
+  popd || exit 1
 }
 
 function main() {
-    build_library
-    run_tests
+  go_to_project_top_directory
+  source ./scripts/shared/shared.sh || exit 1
+  shared.set_bash_error_handling
+
+  build_library
+  run_tests
+
+  shared.display_success_message "Tests completed successfully 🧪"
 }
 
-main "$@"
+main
