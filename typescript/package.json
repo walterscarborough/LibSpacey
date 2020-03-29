@@ -1,0 +1,37 @@
+{
+  "name": "libspacey",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint --ext .ts src/**",
+    "lint-fix": "eslint --fix --ext .ts src/**",
+    "test": "jest --config jestconfig.json",
+
+    "prepare": "npm run build",
+    "prepublishOnly" : "npm test && npm run lint",
+    "version" : "npm run format && git add -A src",
+    "postversion" : "git push && git push --tags"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^25.1.4",
+    "@typescript-eslint/eslint-plugin": "^2.25.0",
+    "@typescript-eslint/parser": "^2.25.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-config-typescript": "^3.0.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "jest": "^25.2.3",
+    "prettier": "^2.0.2",
+    "ts-jest": "^25.2.1",
+    "typescript": "^3.8.3"
+  }
+}
