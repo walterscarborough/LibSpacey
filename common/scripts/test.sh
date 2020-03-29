@@ -6,6 +6,11 @@ function go_to_project_top_directory() {
   cd "$script_dir/.." || exit 1
 }
 
+function install_conan_dependencies() {
+  conan install . -s build_type=Debug --install-folder=cmake-build-debug
+  conan install . -s build_type=Release --install-folder=cmake-build-release
+}
+
 function build_library() {
   pushd cmake-build-debug || exit 1
   cmake ../
@@ -24,6 +29,7 @@ function main() {
   source ./scripts/shared/shared.sh || exit 1
   shared.set_bash_error_handling
 
+  install_conan_dependencies
   build_library
   run_tests
 
