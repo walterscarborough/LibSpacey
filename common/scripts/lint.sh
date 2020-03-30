@@ -7,9 +7,7 @@ function go_to_project_top_directory() {
 }
 
 function run_bash_linter() {
-  pushd common || exit 1
-  shellcheck -x scripts/*.sh
-  popd || exit 1
+  shellcheck -x common/scripts/*.sh
 }
 
 function run_clang_tidy_check() {
