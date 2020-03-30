@@ -3,21 +3,21 @@
 #include "flashcard.h"
 #include "srsengine.h"
 
-int main() {
+auto main() -> int {
 
-    std::string frontString = "this is the front";
-    std::string backString = "and...this is the back";
+    Flashcard newCard = Flashcard();
 
-    Flashcard newCard = Flashcard(frontString, backString);
-
+    // NOLINTNEXTLINE (readability-magic-numbers)
     newCard.setEasinessFactor(10);
+    // NOLINTNEXTLINE (readability-magic-numbers)
     newCard.setInterval(3);
+    // NOLINTNEXTLINE (readability-magic-numbers)
     newCard.setRepetition(2);
 
-    std::cout << newCard.getFront() << std::endl;
-
     unsigned long long currentDate = std::chrono::system_clock::now().time_since_epoch() / std::chrono::seconds(1);
+
     SrsEngine engine = SrsEngine();
+    // NOLINTNEXTLINE (readability-magic-numbers)
     newCard = engine.gradeFlashcard(newCard, 5, currentDate);
 
     std::cout << "interval is: " << newCard.getInterval() << std::endl;

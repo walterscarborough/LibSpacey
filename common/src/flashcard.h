@@ -1,16 +1,14 @@
 #ifndef LIBSPACEY_FLASHCARD_H
 #define LIBSPACEY_FLASHCARD_H
 
-#include <string>
 #include <chrono>
 
 class Flashcard {
 
 private:
-    std::string front;
-    std::string back;
     unsigned int repetition = 0;
     unsigned int interval = 1;
+    // NOLINTNEXTLINE (readability-magic-numbers)
     float easinessFactor = 2.5;
 
     unsigned long long previousDate = static_cast<unsigned long long int>(
@@ -22,27 +20,20 @@ private:
 
 public:
     Flashcard();
-    Flashcard(std::string front, std::string back);
 
-    std::string getFront();
-    void setFront(std::string front);
-
-    std::string getBack();
-    void setBack(std::string back);
-
-    unsigned int getRepetition();
+    auto getRepetition() -> unsigned int;
     void setRepetition(unsigned int repetition);
 
-    unsigned int getInterval();
+    auto getInterval() -> unsigned int;
     void setInterval(unsigned int interval);
 
-    float getEasinessFactor();
+    auto getEasinessFactor() -> float;
     void setEasinessFactor(float easinessFactor);
 
-    unsigned long long getPreviousDate();
+    auto getPreviousDate() -> unsigned long long;
     void setPreviousDate(unsigned long long previousDate);
 
-    unsigned long long getNextDate();
+    auto getNextDate() -> unsigned long long;
     void setNextDate(unsigned long long nextDate);
 };
 

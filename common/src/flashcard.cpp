@@ -3,28 +3,7 @@
 
 Flashcard::Flashcard() = default;
 
-Flashcard::Flashcard(std::string front, std::string back) {
-    this->setFront(std::move(front));
-    this->setBack(std::move(back));
-}
-
-std::string Flashcard::getFront() {
-    return this->front;
-}
-
-void Flashcard::setFront(std::string front) {
-    this->front = std::move(front);
-}
-
-std::string Flashcard::getBack() {
-    return this->back;
-}
-
-void Flashcard::setBack(std::string back) {
-    this->back = std::move(back);
-}
-
-unsigned int Flashcard::getRepetition() {
+auto Flashcard::getRepetition() -> unsigned int {
     return this->repetition;
 }
 
@@ -32,7 +11,7 @@ void Flashcard::setRepetition(unsigned int repetition) {
     this->repetition = repetition;
 }
 
-unsigned int Flashcard::getInterval() {
+auto Flashcard::getInterval() -> unsigned int {
     return this->interval;
 }
 
@@ -40,7 +19,7 @@ void Flashcard::setInterval(unsigned int interval) {
     this->interval = interval;
 }
 
-float Flashcard::getEasinessFactor() {
+auto Flashcard::getEasinessFactor() -> float {
     return this->easinessFactor;
 }
 
@@ -48,7 +27,7 @@ void Flashcard::setEasinessFactor(float easinessFactor) {
     this->easinessFactor = easinessFactor;
 }
 
-unsigned long long Flashcard::getPreviousDate() {
+auto Flashcard::getPreviousDate() -> unsigned long long {
     return this->previousDate;
 }
 
@@ -56,7 +35,7 @@ void Flashcard::setPreviousDate(unsigned long long previousDate) {
     this->previousDate = previousDate;
 }
 
-unsigned long long Flashcard::getNextDate() {
+auto Flashcard::getNextDate() -> unsigned long long {
     return this->nextDate;
 }
 

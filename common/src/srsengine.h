@@ -4,13 +4,13 @@
 #include "flashcard.h"
 
 class SrsEngine {
-
 public:
-    Flashcard gradeFlashcard(
-        Flashcard flashcard,
-        unsigned int grade,
-        unsigned long long currentDatetime
-    );
+    SrsEngine();
+    auto gradeFlashcard(
+            Flashcard &flashcard,
+            unsigned int grade,
+            unsigned long long currentDatetime
+    ) -> Flashcard&;
 };
 
 #endif

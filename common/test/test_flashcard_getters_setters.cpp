@@ -4,24 +4,6 @@
 
 #include "flashcard.h"
 
-TEST(flashcard, front_getter_setter) {
-
-    Flashcard card = Flashcard();
-    card.setFront("I am a flashcard.");
-
-
-    EXPECT_EQ(card.getFront(), "I am a flashcard.");
-}
-
-TEST(flashcard, back_getter_setter) {
-
-    Flashcard card = Flashcard();
-    card.setBack("I am a reversed flashcard!");
-
-
-    EXPECT_EQ(card.getBack(), "I am a reversed flashcard!");
-}
-
 TEST(flashcard, repetition_getter_setter) {
 
     Flashcard card = Flashcard();
