@@ -6,7 +6,11 @@ function go_to_project_top_directory() {
   cd "$script_dir/../.." || exit 1
 }
 
-function lint_typescript() {
+function run_bash_linter() {
+  shellcheck -x typescript/scripts/*.sh
+}
+
+function run_typescript_linter() {
   pushd typescript || exit 1
   npm run lint
   popd || exit 1
@@ -17,9 +21,10 @@ function main() {
   source ./scripts/shared/shared.sh || exit 1
   shared.set_bash_error_handling
 
-  lint_typescript
+  run_bash_linter
+  run_typescript_linter
 
-  shared.display_success_message "Typescript linter ran successfully 🧹"
+  shared.display_success_message "Typescript linters ran successfully 🧹"
 }
 
 main
