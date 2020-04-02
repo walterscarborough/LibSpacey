@@ -2,13 +2,13 @@
   "name": "libspacey",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/LibSpaceyModuleWrapper.js",
+  "types": "dist/LibSpaceyModuleWrapper.d.ts",
   "files": [
     "dist/**/*"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "tsc --build tsconfig.json",
     "lint": "eslint --ext .ts src/**",
     "lint-fix": "eslint --fix --ext .ts src/**",
     "test": "jest --config jestconfig.json",

@@ -4,7 +4,8 @@
 
 # Emscripten
 build-emscripten
-dist-emscripten
+src/libspacey-build
+
 
 ### Node ###
 # Logs

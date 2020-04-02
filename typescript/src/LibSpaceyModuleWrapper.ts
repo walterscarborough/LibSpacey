@@ -1,5 +1,5 @@
-import LibSpaceyModule from './../dist-emscripten/libspacey-module';
-import {LibSpaceyFlashcard, LibSpaceyModuleInstance, LibSpaceySrsEngine} from "./LibSpaceyTypes";
+import LibSpaceyModule from './libspacey-build/libspacey-module';
+import {LibSpaceyFlashcard, LibSpaceyModuleInstance} from "./LibSpaceyTypes";
 import FlashcardBase, {FlashcardGrade} from "./FlashcardBase";
 
 export class LibSpaceyModuleWrapper {
