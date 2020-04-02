@@ -9,8 +9,8 @@
   ],
   "scripts": {
     "build": "tsc --build tsconfig.json",
-    "lint": "eslint --ext .ts src/**",
-    "lint-fix": "eslint --fix --ext .ts src/**",
+    "lint": "eslint -c .eslintrc.json --ext .ts src/**.ts",
+    "lint-fix": "eslint -c .eslintrc.json --fix --ext .ts src/**.ts",
     "test": "jest --config jestconfig.json",
 
     "prepare": "npm run build",
