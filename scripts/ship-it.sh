@@ -16,6 +16,7 @@ function main() {
   shared.set_bash_error_handling
 
   ./common/scripts/validate.sh
+  ./typescript/scripts/validate.sh
 
   push_code
 }
