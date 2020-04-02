@@ -24,7 +24,7 @@ function main() {
   run_bash_linter
   run_clang_tidy_check
 
-  shared.display_success_message "Linters ran successfully 🧹"
+  shared.display_success_message "Library linters ran successfully 🧹"
 }
 
 main

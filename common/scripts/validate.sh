@@ -15,7 +15,7 @@ function main() {
   ./common/scripts/test.sh
   ./common/scripts/build.sh
 
-  shared.display_success_message "Tests completed successfully 🧪"
+  shared.display_success_message "Library validation completed successfully 🧪"
 }
 
 main

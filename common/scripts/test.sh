@@ -35,7 +35,7 @@ function main() {
   build_library
   run_tests
 
-  shared.display_success_message "Tests completed successfully 🧪"
+  shared.display_success_message "Library tests completed successfully 🧪"
 }
 
 main

@@ -6,6 +6,7 @@
 
 SrsEngine::SrsEngine() = default;
 
+// NOLINTNEXTLINE (readability-convert-member-functions-to-static)
 auto SrsEngine::gradeFlashcard(
     Flashcard &flashcard,
     unsigned int grade,

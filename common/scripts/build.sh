@@ -35,7 +35,7 @@ function main() {
   install_conan_dependencies
   build_library
 
-  shared.display_success_message "Build completed successfully 🏗️"
+  shared.display_success_message "Library build completed successfully 🏗️"
 }
 
 main
