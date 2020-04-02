@@ -1,4 +1,4 @@
-import FlashcardModule from './../dist-emscripten/libspacey-flashcard-module';
+import LibSpaceyModule from './../dist-emscripten/libspacey-module';
 import {LibSpaceyFlashcard, LibSpaceyModuleInstance, LibSpaceySrsEngine} from "./LibSpaceyTypes";
 import FlashcardBase, {FlashcardGrade} from "./FlashcardBase";
 
@@ -73,7 +73,7 @@ export class LibSpaceyModuleWrapper {
 
     private createModuleInstance(): Promise<void> {
         return new Promise<void>((success) => {
-            FlashcardModule().then((moduleInstance: LibSpaceyModuleInstance) => {
+            LibSpaceyModule().then((moduleInstance: LibSpaceyModuleInstance) => {
                 this.moduleInstance = moduleInstance;
 
                 success();

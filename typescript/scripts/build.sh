@@ -19,8 +19,8 @@ function prepare_emscripten_dist_directory() {
 function build_webidl_bindings() {
   pushd typescript/build-emscripten || exit 1
   python /usr/local/Cellar/emscripten/*/libexec/tools/webidl_binder.py \
-    ../src-emscripten/flashcard.idl \
-    flashcard-wrapper-glue
+    ../src-emscripten/libspacey.idl \
+    libspacey-wrapper-glue
   popd || exit 1
 }
 
@@ -28,12 +28,12 @@ function compile_emscripten() {
   pushd typescript || exit 1
   emcc ../common/src/flashcard.cpp \
     ../common/src/srsengine.cpp \
-    src-emscripten/flashcard-wrapper.cpp \
-    --post-js build-emscripten/flashcard-wrapper-glue.js \
+    src-emscripten/libspacey-wrapper.cpp \
+    --post-js build-emscripten/libspacey-wrapper-glue.js \
     --emit-symbol-map \
     -s MODULARIZE=1 \
-    -s 'EXPORT_NAME="FlashcardModule"' \
-    -o dist-emscripten/libspacey-flashcard-module.js
+    -s 'EXPORT_NAME="LibSpaceyModule"' \
+    -o dist-emscripten/libspacey-module.js
   popd || exit 1
 }
 
@@ -47,7 +47,7 @@ function main() {
   build_webidl_bindings
   compile_emscripten
 
-  shared.display_success_message "Build completed successfully 🏗️"
+  shared.display_success_message "Typescript build completed successfully 🏗️"
 }
 
 main

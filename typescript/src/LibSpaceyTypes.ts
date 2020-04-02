@@ -30,5 +30,5 @@ export interface LibSpaceyModuleInstance {
 }
 
 export interface LibSpaceyModule {
-    FlashcardModule: Promise<LibSpaceyModuleInstance>;
+    LibSpaceyModule: Promise<LibSpaceyModuleInstance>;
 }
