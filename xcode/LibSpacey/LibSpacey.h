@@ -10,4 +10,3 @@ FOUNDATION_EXPORT const unsigned char LibSpaceyVersionString[];
 
 
 #import "FlashcardGrader.h"
-#import "Grade.h"

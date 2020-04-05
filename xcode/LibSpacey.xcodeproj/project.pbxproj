@@ -211,7 +211,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "Inanimate Studios";
 				TargetAttributes = {
 					D1775DCD1DBB68DD0024B476 = {
@@ -221,18 +221,18 @@
 					};
 					D1775DD61DBB68DD0024B476 = {
 						CreatedOnToolsVersion = 8.0;
-						LastSwiftMigration = 0940;
+						LastSwiftMigration = 1140;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
 			buildConfigurationList = D1775DC81DBB68DD0024B476 /* Build configuration list for PBXProject "LibSpacey" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
+				Base,
 			);
 			mainGroup = D1775DC41DBB68DD0024B476;
 			productRefGroup = D1775DCF1DBB68DD0024B476 /* Products */;
@@ -464,7 +464,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "LibSpaceyTests/LibSpaceyTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -478,7 +478,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "LibSpaceyTests/LibSpaceyTests-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
