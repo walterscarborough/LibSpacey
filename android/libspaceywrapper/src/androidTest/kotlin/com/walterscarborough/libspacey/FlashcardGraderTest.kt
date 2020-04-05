@@ -29,7 +29,7 @@ class FlashcardGraderTest {
 
         val expectedGradedFlashcard = Flashcard(
             repetition = 0,
-            interval = 2,
+            interval = 1,
             easinessFactor = 1.7F,
             previousDate = october_24_2016,
             nextDate = october_25_2016
