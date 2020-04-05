@@ -3,38 +3,28 @@
 
 #include <chrono>
 
-class Flashcard {
+struct Flashcard {
+    Flashcard() {
+        repetition = 0;
+        interval = 1;
 
-private:
-    unsigned int repetition = 0;
-    unsigned int interval = 1;
-    // NOLINTNEXTLINE (readability-magic-numbers)
-    float easinessFactor = 2.5;
+        // NOLINTNEXTLINE (readability-magic-numbers)
+        easinessFactor = 2.5;
 
-    unsigned long long previousDate = static_cast<unsigned long long int>(
-        std::chrono::system_clock::now().time_since_epoch() / std::chrono::seconds(1)
-    );
-    unsigned long long nextDate = static_cast<unsigned long long int>(
-        std::chrono::system_clock::now().time_since_epoch() / std::chrono::seconds(1)
-    );
+        previousDate = static_cast<unsigned long long int>(
+                std::chrono::system_clock::now().time_since_epoch() / std::chrono::seconds(1)
+        );
+        nextDate = static_cast<unsigned long long int>(
+                std::chrono::system_clock::now().time_since_epoch() / std::chrono::seconds(1)
+        );
+    }
 
-public:
-    Flashcard();
+    unsigned int repetition;
+    unsigned int interval;
+    float easinessFactor;
 
-    auto getRepetition() -> unsigned int;
-    void setRepetition(unsigned int repetition);
-
-    auto getInterval() -> unsigned int;
-    void setInterval(unsigned int interval);
-
-    auto getEasinessFactor() -> float;
-    void setEasinessFactor(float easinessFactor);
-
-    auto getPreviousDate() -> unsigned long long;
-    void setPreviousDate(unsigned long long previousDate);
-
-    auto getNextDate() -> unsigned long long;
-    void setNextDate(unsigned long long nextDate);
+    unsigned long long previousDate;
+    unsigned long long nextDate;
 };
 
 #endif

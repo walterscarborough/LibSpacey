@@ -3,7 +3,7 @@
 #include "gtest/gtest.h"
 
 #include "flashcard.h"
-#include "srsengine.h"
+#include "gradeFlashcard.h"
 
 TEST(srsengine, grade_0_response) {
 
@@ -14,23 +14,21 @@ TEST(srsengine, grade_0_response) {
     float expectedEasinessFactor = 1.7;
 
     Flashcard card = Flashcard();
-    card.setPreviousDate(october_24_2016);
-    card.setNextDate(october_24_2016);
-
-    SrsEngine engine = SrsEngine();
+    card.previousDate = october_24_2016;
+    card.nextDate = october_24_2016;
 
 
-    Flashcard gradedCard = engine.gradeFlashcard(card, grade, october_24_2016);
+    Flashcard gradedCard = gradeFlashcard(card, grade, october_24_2016);
 
 
-    EXPECT_EQ(gradedCard.getRepetition(), 0);
-    EXPECT_EQ(gradedCard.getInterval(), 1);
-    EXPECT_EQ(gradedCard.getEasinessFactor(), expectedEasinessFactor);
-    EXPECT_EQ(gradedCard.getPreviousDate(), october_24_2016);
-    EXPECT_EQ(gradedCard.getNextDate(), october_25_2016);
+    EXPECT_EQ(gradedCard.repetition, 0);
+    EXPECT_EQ(gradedCard.interval, 1);
+    EXPECT_EQ(gradedCard.easinessFactor, expectedEasinessFactor);
+    EXPECT_EQ(gradedCard.previousDate, october_24_2016);
+    EXPECT_EQ(gradedCard.nextDate, october_25_2016);
 }
 
-TEST(srsengine, grade_1_response) {
+TEST(gradeFlashcard, grade_1_response) {
 
     unsigned int grade = 1;
     unsigned long long october_23_2016 = 1477207892;
@@ -39,23 +37,21 @@ TEST(srsengine, grade_1_response) {
     float expectedEasinessFactor = 1.96;
 
     Flashcard card = Flashcard();
-    card.setPreviousDate(october_23_2016);
-    card.setNextDate(october_23_2016);
-
-    SrsEngine engine = SrsEngine();
+    card.previousDate = october_23_2016;
+    card.nextDate = october_23_2016;
 
 
-    Flashcard gradedCard = engine.gradeFlashcard(card, grade, october_23_2016);
+    Flashcard gradedCard = gradeFlashcard(card, grade, october_23_2016);
 
 
-    EXPECT_EQ(gradedCard.getRepetition(), 0);
-    EXPECT_EQ(gradedCard.getInterval(), 1);
-    EXPECT_EQ(gradedCard.getEasinessFactor(), expectedEasinessFactor);
-    EXPECT_EQ(gradedCard.getPreviousDate(), october_23_2016);
-    EXPECT_EQ(gradedCard.getNextDate(), october_24_2016);
+    EXPECT_EQ(gradedCard.repetition, 0);
+    EXPECT_EQ(gradedCard.interval, 1);
+    EXPECT_EQ(gradedCard.easinessFactor, expectedEasinessFactor);
+    EXPECT_EQ(gradedCard.previousDate, october_23_2016);
+    EXPECT_EQ(gradedCard.nextDate, october_24_2016);
 }
 
-TEST(srsengine, grade_2_response) {
+TEST(gradeFlashcard, grade_2_response) {
 
     unsigned int grade = 2;
     unsigned long long october_24_2016 = 1477294292;
@@ -64,23 +60,21 @@ TEST(srsengine, grade_2_response) {
     float expectedEasinessFactor = 2.18;
 
     Flashcard card = Flashcard();
-    card.setPreviousDate(october_24_2016);
-    card.setNextDate(october_24_2016);
-
-    SrsEngine engine = SrsEngine();
+    card.previousDate = october_24_2016;
+    card.nextDate = october_24_2016;
 
 
-    Flashcard gradedCard = engine.gradeFlashcard(card, grade, october_24_2016);
+    Flashcard gradedCard = gradeFlashcard(card, grade, october_24_2016);
 
 
-    EXPECT_EQ(gradedCard.getRepetition(), 0);
-    EXPECT_EQ(gradedCard.getInterval(), 1);
-    EXPECT_EQ(gradedCard.getEasinessFactor(), expectedEasinessFactor);
-    EXPECT_EQ(gradedCard.getPreviousDate(), october_24_2016);
-    EXPECT_EQ(gradedCard.getNextDate(), october_25_2016);
+    EXPECT_EQ(gradedCard.repetition, 0);
+    EXPECT_EQ(gradedCard.interval, 1);
+    EXPECT_EQ(gradedCard.easinessFactor, expectedEasinessFactor);
+    EXPECT_EQ(gradedCard.previousDate, october_24_2016);
+    EXPECT_EQ(gradedCard.nextDate, october_25_2016);
 }
 
-TEST(srsengine, grade_3_response) {
+TEST(gradeFlashcard, grade_3_response) {
 
     unsigned int grade = 3;
     unsigned long long october_23_2016 = 1477207892;
@@ -91,23 +85,21 @@ TEST(srsengine, grade_3_response) {
     float expectedEasinessFactor = 2.36;
 
     Flashcard card = Flashcard();
-    card.setPreviousDate(october_23_2016);
-    card.setNextDate(october_23_2016);
-
-    SrsEngine engine = SrsEngine();
+    card.previousDate = october_23_2016;
+    card.nextDate = october_23_2016;
 
 
-    Flashcard gradedCard = engine.gradeFlashcard(card, grade, october_23_2016);
+    Flashcard gradedCard = gradeFlashcard(card, grade, october_23_2016);
 
 
-    EXPECT_EQ(gradedCard.getRepetition(), 1);
-    EXPECT_EQ(gradedCard.getInterval(), 1);
-    EXPECT_EQ(gradedCard.getEasinessFactor(), expectedEasinessFactor);
-    EXPECT_EQ(gradedCard.getPreviousDate(), october_23_2016);
-    EXPECT_EQ(gradedCard.getNextDate(), october_24_2016);
+    EXPECT_EQ(gradedCard.repetition, 1);
+    EXPECT_EQ(gradedCard.interval, 1);
+    EXPECT_EQ(gradedCard.easinessFactor, expectedEasinessFactor);
+    EXPECT_EQ(gradedCard.previousDate, october_23_2016);
+    EXPECT_EQ(gradedCard.nextDate, october_24_2016);
 }
 
-TEST(srsengine, grade_4_response) {
+TEST(gradeFlashcard, grade_4_response) {
 
     unsigned int grade = 4;
     unsigned long long october_23_2016 = 1477207892;
@@ -118,23 +110,21 @@ TEST(srsengine, grade_4_response) {
     float expectedEasinessFactor = 2.5;
 
     Flashcard card = Flashcard();
-    card.setPreviousDate(october_23_2016);
-    card.setNextDate(october_23_2016);
-
-    SrsEngine engine = SrsEngine();
+    card.previousDate = october_23_2016;
+    card.nextDate = october_23_2016;
 
 
-    Flashcard gradedCard = engine.gradeFlashcard(card, grade, october_23_2016);
+    Flashcard gradedCard = gradeFlashcard(card, grade, october_23_2016);
 
 
-    EXPECT_EQ(gradedCard.getRepetition(), 1);
-    EXPECT_EQ(gradedCard.getInterval(), 1);
-    EXPECT_EQ(gradedCard.getEasinessFactor(), expectedEasinessFactor);
-    EXPECT_EQ(gradedCard.getPreviousDate(), october_23_2016);
-    EXPECT_EQ(gradedCard.getNextDate(), october_24_2016);
+    EXPECT_EQ(gradedCard.repetition, 1);
+    EXPECT_EQ(gradedCard.interval, 1);
+    EXPECT_EQ(gradedCard.easinessFactor, expectedEasinessFactor);
+    EXPECT_EQ(gradedCard.previousDate, october_23_2016);
+    EXPECT_EQ(gradedCard.nextDate, october_24_2016);
 }
 
-TEST(srsengine, grade_5_response) {
+TEST(gradeFlashcard, grade_5_response) {
 
     unsigned int grade = 5;
     unsigned long long october_23_2016 = 1477207892;
@@ -145,23 +135,21 @@ TEST(srsengine, grade_5_response) {
     float expectedEasinessFactor = 2.6;
 
     Flashcard card = Flashcard();
-    card.setPreviousDate(october_23_2016);
-    card.setNextDate(october_23_2016);
-
-    SrsEngine engine = SrsEngine();
+    card.previousDate = october_23_2016;
+    card.nextDate = october_23_2016;
 
 
-    Flashcard gradedCard = engine.gradeFlashcard(card, grade, october_23_2016);
+    Flashcard gradedCard = gradeFlashcard(card, grade, october_23_2016);
 
 
-    EXPECT_EQ(gradedCard.getRepetition(), 1);
-    EXPECT_EQ(gradedCard.getInterval(), 1);
-    EXPECT_EQ(gradedCard.getEasinessFactor(), expectedEasinessFactor);
-    EXPECT_EQ(gradedCard.getPreviousDate(), october_23_2016);
-    EXPECT_EQ(gradedCard.getNextDate(), october_24_2016);
+    EXPECT_EQ(gradedCard.repetition, 1);
+    EXPECT_EQ(gradedCard.interval, 1);
+    EXPECT_EQ(gradedCard.easinessFactor, expectedEasinessFactor);
+    EXPECT_EQ(gradedCard.previousDate, october_23_2016);
+    EXPECT_EQ(gradedCard.nextDate, october_24_2016);
 }
 
-TEST(srsengine, long_repetition_grade_5_response) {
+TEST(gradeFlashcard, long_repetition_grade_5_response) {
 
     unsigned int grade = 5;
     unsigned long long october_23_2016 = 1477207892;
@@ -172,20 +160,18 @@ TEST(srsengine, long_repetition_grade_5_response) {
     float expectedEasinessFactor = 2.6;
 
     Flashcard card = Flashcard();
-    card.setInterval(6);
-    card.setRepetition(6);
-    card.setPreviousDate(october_23_2016);
-    card.setNextDate(october_23_2016);
-
-    SrsEngine engine = SrsEngine();
+    card.interval = 6;
+    card.repetition = 6;
+    card.previousDate = october_23_2016;
+    card.nextDate = october_23_2016;
 
 
-    Flashcard gradedCard = engine.gradeFlashcard(card, grade, october_23_2016);
+    Flashcard gradedCard = gradeFlashcard(card, grade, october_23_2016);
 
 
-    EXPECT_EQ(gradedCard.getRepetition(), 7);
-    EXPECT_EQ(gradedCard.getInterval(), 4);
-    EXPECT_EQ(gradedCard.getEasinessFactor(), expectedEasinessFactor);
-    EXPECT_EQ(gradedCard.getPreviousDate(), october_23_2016);
-    EXPECT_EQ(gradedCard.getNextDate(), october_27_2016);
+    EXPECT_EQ(gradedCard.repetition, 7);
+    EXPECT_EQ(gradedCard.interval, 4);
+    EXPECT_EQ(gradedCard.easinessFactor, expectedEasinessFactor);
+    EXPECT_EQ(gradedCard.previousDate, october_23_2016);
+    EXPECT_EQ(gradedCard.nextDate, october_27_2016);
 }
