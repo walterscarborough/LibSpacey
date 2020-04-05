@@ -5,7 +5,7 @@
 #include "flashcard.h"
 #include "gradeFlashcard.h"
 
-TEST(srsengine, grade_0_response) {
+TEST(gradeFlashcard, grade_0_response) {
 
     unsigned int grade = 0;
     unsigned long long october_24_2016 = 1477294292;

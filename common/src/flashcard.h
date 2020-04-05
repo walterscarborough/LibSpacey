@@ -2,14 +2,13 @@
 #define LIBSPACEY_FLASHCARD_H
 
 #include <chrono>
+#include "flashcardDefaults.h"
 
 struct Flashcard {
     Flashcard() {
-        repetition = 0;
-        interval = 1;
-
-        // NOLINTNEXTLINE (readability-magic-numbers)
-        easinessFactor = 2.5;
+        repetition = defaultRepetition;
+        interval = defaultInterval;
+        easinessFactor = defaultEasinessFactor;
 
         previousDate = static_cast<unsigned long long int>(
                 std::chrono::system_clock::now().time_since_epoch() / std::chrono::seconds(1)
