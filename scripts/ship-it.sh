@@ -18,6 +18,7 @@ function main() {
   ./common/scripts/validate.sh
   ./xcode/scripts/validate.sh
   ./typescript/scripts/validate.sh
+  ./android/scripts/validate.sh
 
   push_code
 }
