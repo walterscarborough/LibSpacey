@@ -2,7 +2,7 @@
 #import "LibSpaceyFlashcard.h"
 #import "Grade.h"
 
-@interface FlashcardGrader : NSObject
+@interface FlashcardGraderWrapper : NSObject
 
 + (LibSpaceyFlashcard *) gradeFlashcard:(LibSpaceyFlashcard *)libSpaceyFlashcard
                          grade: (Grade)grade

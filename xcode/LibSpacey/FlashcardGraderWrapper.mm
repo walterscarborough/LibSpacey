@@ -20,7 +20,7 @@
 
     unsigned long long convertedCurrentDateTime = currentDateTime.timeIntervalSince1970;
 
-    Flashcard outputFlashcard = FlashcardGrader.gradeFlashcard(flashcard, grade, convertedCurrentDateTime);
+    Flashcard outputFlashcard = FlashcardGrader::gradeFlashcard(flashcard, grade, convertedCurrentDateTime);
 
     LibSpaceyFlashcard *finishedFlashcard = [self convertRegularFlashcardToGradeableFlashcard:outputFlashcard];
 

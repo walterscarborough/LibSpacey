@@ -6,7 +6,7 @@ class LibSpaceyTests: XCTestCase {
     func test_flashcardGrader_canGrade_flashcards() {
         let flashcard = LibSpaceyFlashcard()
 
-        if let outputCard = FlashcardGrader.gradeFlashcard(
+        if let outputCard = FlashcardGraderWrapper.gradeFlashcard(
             flashcard,
             grade: Grade.Unknown,
             currentDateTime: Date()
@@ -27,7 +27,7 @@ class LibSpaceyTests: XCTestCase {
         flashcard.previousDate = Date(timeIntervalSince1970: TimeInterval(october_24_2016))
         flashcard.nextDate = Date(timeIntervalSince1970: TimeInterval(october_24_2016))
 
-        let gradedFlashcard = FlashcardGrader.gradeFlashcard(
+        let gradedFlashcard = FlashcardGraderWrapper.gradeFlashcard(
             flashcard,
             grade: Grade.Unknown,
             currentDateTime: Date(timeIntervalSince1970: TimeInterval(october_24_2016))
@@ -49,7 +49,7 @@ class LibSpaceyTests: XCTestCase {
         flashcard.previousDate = Date(timeIntervalSince1970: TimeInterval(october_23_2016))
         flashcard.nextDate = Date(timeIntervalSince1970: TimeInterval(october_23_2016))
 
-        let gradedFlashcard = FlashcardGrader.gradeFlashcard(
+        let gradedFlashcard = FlashcardGraderWrapper.gradeFlashcard(
             flashcard,
             grade: Grade.VeryHard,
             currentDateTime: Date(timeIntervalSince1970: TimeInterval(october_23_2016))
@@ -71,7 +71,7 @@ class LibSpaceyTests: XCTestCase {
         flashcard.previousDate = Date(timeIntervalSince1970: TimeInterval(october_24_2016))
         flashcard.nextDate = Date(timeIntervalSince1970: TimeInterval(october_24_2016))
 
-        let gradedFlashcard = FlashcardGrader.gradeFlashcard(
+        let gradedFlashcard = FlashcardGraderWrapper.gradeFlashcard(
             flashcard,
             grade: Grade.Hard,
             currentDateTime: Date(timeIntervalSince1970: TimeInterval(october_24_2016))
@@ -93,7 +93,7 @@ class LibSpaceyTests: XCTestCase {
         flashcard.previousDate = Date(timeIntervalSince1970: TimeInterval(october_23_2016))
         flashcard.nextDate = Date(timeIntervalSince1970: TimeInterval(october_23_2016))
 
-        let gradedFlashcard = FlashcardGrader.gradeFlashcard(
+        let gradedFlashcard = FlashcardGraderWrapper.gradeFlashcard(
             flashcard,
             grade: Grade.Medium,
             currentDateTime: Date(timeIntervalSince1970: TimeInterval(october_23_2016))
@@ -115,7 +115,7 @@ class LibSpaceyTests: XCTestCase {
         flashcard.previousDate = Date(timeIntervalSince1970: TimeInterval(october_23_2016))
         flashcard.nextDate = Date(timeIntervalSince1970: TimeInterval(october_23_2016))
 
-        let gradedFlashcard = FlashcardGrader.gradeFlashcard(
+        let gradedFlashcard = FlashcardGraderWrapper.gradeFlashcard(
             flashcard,
             grade: Grade.Easy,
             currentDateTime: Date(timeIntervalSince1970: TimeInterval(october_23_2016))
@@ -137,7 +137,7 @@ class LibSpaceyTests: XCTestCase {
         flashcard.previousDate = Date(timeIntervalSince1970: TimeInterval(october_23_2016))
         flashcard.nextDate = Date(timeIntervalSince1970: TimeInterval(october_23_2016))
 
-        let gradedFlashcard = FlashcardGrader.gradeFlashcard(
+        let gradedFlashcard = FlashcardGraderWrapper.gradeFlashcard(
             flashcard,
             grade: Grade.VeryEasy,
             currentDateTime: Date(timeIntervalSince1970: TimeInterval(october_23_2016))
@@ -161,7 +161,7 @@ class LibSpaceyTests: XCTestCase {
         flashcard.previousDate = Date(timeIntervalSince1970: TimeInterval(october_23_2016))
         flashcard.nextDate = Date(timeIntervalSince1970: TimeInterval(october_23_2016))
 
-        let gradedFlashcard = FlashcardGrader.gradeFlashcard(
+        let gradedFlashcard = FlashcardGraderWrapper.gradeFlashcard(
             flashcard,
             grade: Grade.VeryEasy,
             currentDateTime: Date(timeIntervalSince1970: TimeInterval(october_23_2016))
