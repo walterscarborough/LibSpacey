@@ -3,7 +3,7 @@
 #include "gtest/gtest.h"
 
 #include "flashcard.h"
-#include "gradeFlashcard.h"
+#include "flashcardGrader.h"
 
 TEST(flashcard, defaults) {
     auto flashcard = Flashcard();

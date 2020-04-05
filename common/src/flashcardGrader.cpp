@@ -1,7 +1,7 @@
 #include <cmath>
-#include "gradeFlashcard.h"
+#include "flashcardGrader.h"
 
-auto gradeFlashcard(
+auto FlashcardGrader::gradeFlashcard(
         Flashcard flashcard,
         unsigned int grade,
         unsigned long long currentDatetime

@@ -13,6 +13,7 @@ export class LibSpaceyModuleWrapper {
     const libSpaceyFlashcard = await this.convertFlashcardBaseToLibSpaceyFlashcard(
       flashcard
     );
+
     const libSpaceyGrade = this.convertFlashcardGradeToLibSpaceyGrade(grade);
 
     const gradedLibSpaceyFlashcard = await this.gradeLibSpaceyFlashcard(
@@ -32,11 +33,11 @@ export class LibSpaceyModuleWrapper {
     libSpaceyFlashcard: LibSpaceyFlashcard
   ): FlashcardBase {
     return {
-      repetition: libSpaceyFlashcard.getRepetition(),
-      interval: libSpaceyFlashcard.getInterval(),
-      easinessFactor: libSpaceyFlashcard.getEasinessFactor(),
-      previousDate: libSpaceyFlashcard.getPreviousDate(),
-      nextDate: libSpaceyFlashcard.getNextDate(),
+      interval: libSpaceyFlashcard.interval,
+      repetition: libSpaceyFlashcard.repetition,
+      easinessFactor: libSpaceyFlashcard.easinessFactor,
+      previousDate: libSpaceyFlashcard.previousDate,
+      nextDate: libSpaceyFlashcard.nextDate,
     } as FlashcardBase;
   }
 
@@ -45,11 +46,11 @@ export class LibSpaceyModuleWrapper {
   ): Promise<LibSpaceyFlashcard> {
     const libSpaceyFlashcard = await this.createFlashcard();
 
-    libSpaceyFlashcard.setInterval(flashcard.interval);
-    libSpaceyFlashcard.setRepetition(flashcard.repetition);
-    libSpaceyFlashcard.setEasinessFactor(flashcard.easinessFactor);
-    libSpaceyFlashcard.setPreviousDate(flashcard.previousDate);
-    libSpaceyFlashcard.setNextDate(flashcard.nextDate);
+    libSpaceyFlashcard.interval = flashcard.interval;
+    libSpaceyFlashcard.repetition = flashcard.repetition;
+    libSpaceyFlashcard.easinessFactor = flashcard.easinessFactor;
+    libSpaceyFlashcard.previousDate = flashcard.previousDate;
+    libSpaceyFlashcard.nextDate = flashcard.nextDate;
 
     return libSpaceyFlashcard;
   }
@@ -77,9 +78,9 @@ export class LibSpaceyModuleWrapper {
       await this.createModuleInstance();
     }
 
-    const srsEngine = new this.moduleInstance!.SrsEngine();
+    const flashcardGrader = (this.moduleInstance! as any).FlashcardGrader;
 
-    const gradedFlashcard = srsEngine.gradeFlashcard(
+    const gradedFlashcard = flashcardGrader.prototype.gradeFlashcard(
       libSpaceyFlashcard,
       grade,
       currentDate

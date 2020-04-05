@@ -26,8 +26,8 @@ function build_webidl_bindings() {
 
 function compile_emscripten() {
   pushd typescript || exit 1
-  emcc ../common/src/flashcard.cpp \
-    ../common/src/srsengine.cpp \
+
+  emcc ../common/src/flashcardGrader.cpp \
     src-emscripten/libspacey-wrapper.cpp \
     --post-js build-emscripten/libspacey-wrapper-glue.js \
     --emit-symbol-map \
@@ -36,6 +36,7 @@ function compile_emscripten() {
     -s MODULARIZE=1 \
     -s 'EXPORT_NAME="LibSpaceyModule"' \
     -o src/libspacey-build/libspacey-module.js
+
   popd || exit 1
 }
 

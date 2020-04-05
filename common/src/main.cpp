@@ -1,7 +1,7 @@
 #include <iostream>
 
 #include "flashcard.h"
-#include "gradeFlashcard.h"
+#include "flashcardGrader.h"
 
 auto main() -> int {
 
@@ -17,7 +17,7 @@ auto main() -> int {
     unsigned long long currentDate = std::chrono::system_clock::now().time_since_epoch() / std::chrono::seconds(1);
 
     // NOLINTNEXTLINE (readability-magic-numbers)
-    auto gradedCard = gradeFlashcard(newCard, 5, currentDate);
+    auto gradedCard = FlashcardGrader::gradeFlashcard(newCard, 5, currentDate);
 
     std::cout << "A interval is: " << newCard.interval << std::endl;
     std::cout << "A repCount is: " << newCard.repetition << std::endl;

@@ -1,26 +1,14 @@
 interface Flashcard {
     void Flashcard();
-
-    unsigned long getRepetition();
-    void setRepetition(unsigned long repetition);
-
-    unsigned long getInterval();
-    void setInterval(unsigned long interval);
-
-    float getEasinessFactor();
-    void setEasinessFactor(float easinessFactor);
-
-    unsigned long long getPreviousDate();
-    void setPreviousDate(unsigned long long previousDate);
-
-    unsigned long long getNextDate();
-    void setNextDate(unsigned long long nextDate);
+    attribute unsigned long repetition;
+    attribute unsigned long interval;
+    attribute float easinessFactor;
+    attribute unsigned long long previousDate;
+    attribute unsigned long long nextDate;
 };
 
-interface SrsEngine {
-    void SrsEngine();
-
-    [Ref] Flashcard gradeFlashcard(
+interface FlashcardGrader {
+    [Value] static Flashcard gradeFlashcard(
         [Ref] Flashcard flashcard,
         unsigned long grade,
         unsigned long long currentDatetime

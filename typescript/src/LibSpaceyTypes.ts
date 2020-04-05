@@ -1,22 +1,13 @@
 export interface LibSpaceyFlashcard {
   new (): LibSpaceyFlashcard;
-  getRepetition: () => number;
-  setRepetition(repetition: number): void;
-
-  getInterval: () => number;
-  setInterval(interval: number): void;
-
-  getEasinessFactor: () => number;
-  setEasinessFactor(easinessFactor: number): void;
-
-  getPreviousDate: () => number;
-  setPreviousDate(previousDate: number): void;
-
-  getNextDate: () => number;
-  setNextDate(nextDate: number): void;
+  repetition: number;
+  interval: number;
+  easinessFactor: number;
+  previousDate: number;
+  nextDate: number;
 }
 
-export interface LibSpaceySrsEngine {
+export interface FlashcardGrader {
   gradeFlashcard: (
     libSpaceyFlashcard: LibSpaceyFlashcard,
     grade: number,
@@ -26,7 +17,7 @@ export interface LibSpaceySrsEngine {
 
 export interface LibSpaceyModuleInstance {
   Flashcard: new () => LibSpaceyFlashcard;
-  SrsEngine: new () => LibSpaceySrsEngine;
+  FlashcardGrader: FlashcardGrader;
 }
 
 export interface LibSpaceyModule {

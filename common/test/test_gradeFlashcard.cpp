@@ -3,7 +3,7 @@
 #include "gtest/gtest.h"
 
 #include "flashcard.h"
-#include "gradeFlashcard.h"
+#include "flashcardGrader.h"
 
 TEST(gradeFlashcard, grade_0_response) {
 
@@ -18,7 +18,7 @@ TEST(gradeFlashcard, grade_0_response) {
     card.nextDate = october_24_2016;
 
 
-    Flashcard gradedCard = gradeFlashcard(card, grade, october_24_2016);
+    Flashcard gradedCard = FlashcardGrader::gradeFlashcard(card, grade, october_24_2016);
 
 
     EXPECT_EQ(gradedCard.repetition, 0);
@@ -41,7 +41,7 @@ TEST(gradeFlashcard, grade_1_response) {
     card.nextDate = october_23_2016;
 
 
-    Flashcard gradedCard = gradeFlashcard(card, grade, october_23_2016);
+    Flashcard gradedCard = FlashcardGrader::gradeFlashcard(card, grade, october_23_2016);
 
 
     EXPECT_EQ(gradedCard.repetition, 0);
@@ -64,7 +64,7 @@ TEST(gradeFlashcard, grade_2_response) {
     card.nextDate = october_24_2016;
 
 
-    Flashcard gradedCard = gradeFlashcard(card, grade, october_24_2016);
+    Flashcard gradedCard = FlashcardGrader::gradeFlashcard(card, grade, october_24_2016);
 
 
     EXPECT_EQ(gradedCard.repetition, 0);
@@ -89,7 +89,7 @@ TEST(gradeFlashcard, grade_3_response) {
     card.nextDate = october_23_2016;
 
 
-    Flashcard gradedCard = gradeFlashcard(card, grade, october_23_2016);
+    Flashcard gradedCard = FlashcardGrader::gradeFlashcard(card, grade, october_23_2016);
 
 
     EXPECT_EQ(gradedCard.repetition, 1);
@@ -114,7 +114,7 @@ TEST(gradeFlashcard, grade_4_response) {
     card.nextDate = october_23_2016;
 
 
-    Flashcard gradedCard = gradeFlashcard(card, grade, october_23_2016);
+    Flashcard gradedCard = FlashcardGrader::gradeFlashcard(card, grade, october_23_2016);
 
 
     EXPECT_EQ(gradedCard.repetition, 1);
@@ -139,7 +139,7 @@ TEST(gradeFlashcard, grade_5_response) {
     card.nextDate = october_23_2016;
 
 
-    Flashcard gradedCard = gradeFlashcard(card, grade, october_23_2016);
+    Flashcard gradedCard = FlashcardGrader::gradeFlashcard(card, grade, october_23_2016);
 
 
     EXPECT_EQ(gradedCard.repetition, 1);
@@ -166,7 +166,7 @@ TEST(gradeFlashcard, long_repetition_grade_5_response) {
     card.nextDate = october_23_2016;
 
 
-    Flashcard gradedCard = gradeFlashcard(card, grade, october_23_2016);
+    Flashcard gradedCard = FlashcardGrader::gradeFlashcard(card, grade, october_23_2016);
 
 
     EXPECT_EQ(gradedCard.repetition, 7);
