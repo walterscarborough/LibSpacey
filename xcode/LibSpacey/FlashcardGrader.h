@@ -1,8 +1,11 @@
 #import <Foundation/Foundation.h>
-@class GradeableFlashcard;
+#import "LibSpaceyFlashcard.h"
+#import "Grade.h"
 
 @interface FlashcardGrader : NSObject
 
-- (GradeableFlashcard *) gradeFlashcard: (NSUInteger)grade gradeableFlashcard:(GradeableFlashcard *)gradeableFlashcard;
++ (LibSpaceyFlashcard *) gradeFlashcard:(LibSpaceyFlashcard *)libSpaceyFlashcard
+                         grade: (Grade)grade
+                         currentDateTime: (NSDate *)currentDateTime;
 
 @end

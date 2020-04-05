@@ -1,58 +1,55 @@
 #import "FlashcardGrader.h"
 #import "flashcard.h"
-#import "srsengine.h"
-
-#import <LibSpacey/LibSpacey-Swift.h>
+#import "gradeFlashcard.h"
 
 @interface FlashcardGrader()
 
-- (Flashcard)convertGradeableFlashcardToRegularFlashcard: (GradeableFlashcard *)gradeableFlashcard;
++ (Flashcard) convertGradeableFlashcardToRegularFlashcard: (LibSpaceyFlashcard *)libSpaceyFlashcard;
 
-- (GradeableFlashcard *) convertRegularFlashcardToGradeableFlashcard: (Flashcard)regularFlashcard;
++ (LibSpaceyFlashcard *) convertRegularFlashcardToGradeableFlashcard: (Flashcard)regularFlashcard;
 
 @end
 
 @implementation FlashcardGrader
 
-- (GradeableFlashcard *) gradeFlashcard: (NSUInteger)grade gradeableFlashcard:(GradeableFlashcard *)gradeableFlashcard {
++ (LibSpaceyFlashcard *) gradeFlashcard:(LibSpaceyFlashcard *)libSpaceyFlashcard
+                         grade: (Grade)grade
+                         currentDateTime: (NSDate *)currentDateTime
+{
+    Flashcard flashcard = [self convertGradeableFlashcardToRegularFlashcard:libSpaceyFlashcard];
 
+    unsigned long long convertedCurrentDateTime = currentDateTime.timeIntervalSince1970;
 
-    Flashcard flashcard = [self convertGradeableFlashcardToRegularFlashcard:gradeableFlashcard];
+    Flashcard outputFlashcard = gradeFlashcard(flashcard, grade, convertedCurrentDateTime);
 
-    NSTimeInterval currentDatetime = [[NSDate date] timeIntervalSince1970];
-
-    SrsEngine srsengine = SrsEngine();
-    Flashcard outputFlashcard = srsengine.gradeFlashcard(flashcard, (unsigned int)grade, currentDatetime);
-
-    GradeableFlashcard *finishedFlashcard = [self convertRegularFlashcardToGradeableFlashcard:outputFlashcard];
-
+    LibSpaceyFlashcard *finishedFlashcard = [self convertRegularFlashcardToGradeableFlashcard:outputFlashcard];
 
     return finishedFlashcard;
 }
 
-- (Flashcard)convertGradeableFlashcardToRegularFlashcard: (GradeableFlashcard *)gradeableFlashcard {
++ (Flashcard)convertGradeableFlashcardToRegularFlashcard: (LibSpaceyFlashcard *)libSpaceyFlashcard {
 
     Flashcard regularFlashcard = Flashcard();
-    regularFlashcard.setRepetition((unsigned int)gradeableFlashcard.repetition);
-    regularFlashcard.setInterval((unsigned int)gradeableFlashcard.interval);
-    regularFlashcard.setEasinessFactor(gradeableFlashcard.easinessFactor);
-    
-    regularFlashcard.setPreviousDate(gradeableFlashcard.previousDate.timeIntervalSince1970);
-    regularFlashcard.setNextDate(gradeableFlashcard.nextDate.timeIntervalSince1970);
+    regularFlashcard.repetition = (unsigned int)libSpaceyFlashcard.repetition;
+    regularFlashcard.interval = (unsigned int)libSpaceyFlashcard.interval;
+    regularFlashcard.easinessFactor = libSpaceyFlashcard.easinessFactor;
+
+    regularFlashcard.previousDate = libSpaceyFlashcard.previousDate.timeIntervalSince1970;
+    regularFlashcard.nextDate = libSpaceyFlashcard.nextDate.timeIntervalSince1970;
 
     return regularFlashcard;
 }
 
-- (GradeableFlashcard *) convertRegularFlashcardToGradeableFlashcard: (Flashcard)regularFlashcard {
++ (LibSpaceyFlashcard *) convertRegularFlashcardToGradeableFlashcard: (Flashcard)regularFlashcard {
 
-    GradeableFlashcard *gradeableFlashcard = [[GradeableFlashcard alloc] init];
-    gradeableFlashcard.repetition = regularFlashcard.getRepetition();
-    gradeableFlashcard.interval = regularFlashcard.getInterval();
-    gradeableFlashcard.easinessFactor = regularFlashcard.getEasinessFactor();
-    gradeableFlashcard.previousDate = [NSDate dateWithTimeIntervalSince1970:regularFlashcard.getPreviousDate()];
-    gradeableFlashcard.nextDate = [NSDate dateWithTimeIntervalSince1970:regularFlashcard.getNextDate()];
+    LibSpaceyFlashcard *libSpaceyFlashcard = [[LibSpaceyFlashcard alloc] init];
+    libSpaceyFlashcard.repetition = regularFlashcard.repetition;
+    libSpaceyFlashcard.interval = regularFlashcard.interval;
+    libSpaceyFlashcard.easinessFactor = regularFlashcard.easinessFactor;
+    libSpaceyFlashcard.previousDate = [NSDate dateWithTimeIntervalSince1970:regularFlashcard.previousDate];
+    libSpaceyFlashcard.nextDate = [NSDate dateWithTimeIntervalSince1970:regularFlashcard.nextDate];
 
-    return gradeableFlashcard;
+    return libSpaceyFlashcard;
 }
 
 @end

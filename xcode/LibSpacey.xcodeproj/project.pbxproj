@@ -8,15 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		D1775DD81DBB68DD0024B476 /* LibSpacey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1775DCE1DBB68DD0024B476 /* LibSpacey.framework */; };
-		D1775DDD1DBB68DD0024B476 /* LibSpaceyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1775DDC1DBB68DD0024B476 /* LibSpaceyTests.swift */; };
+		D1775DDD1DBB68DD0024B476 /* FlashcardGraderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1775DDC1DBB68DD0024B476 /* FlashcardGraderTests.swift */; };
 		D1775DDF1DBB68DD0024B476 /* LibSpacey.h in Headers */ = {isa = PBXBuildFile; fileRef = D1775DD11DBB68DD0024B476 /* LibSpacey.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D1775DED1DBB690E0024B476 /* flashcard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D1775DE91DBB690E0024B476 /* flashcard.cpp */; };
-		D1775DEE1DBB690E0024B476 /* flashcard.h in Headers */ = {isa = PBXBuildFile; fileRef = D1775DEA1DBB690E0024B476 /* flashcard.h */; };
-		D1775DEF1DBB690E0024B476 /* srsengine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D1775DEB1DBB690E0024B476 /* srsengine.cpp */; };
-		D1775DF01DBB690E0024B476 /* srsengine.h in Headers */ = {isa = PBXBuildFile; fileRef = D1775DEC1DBB690E0024B476 /* srsengine.h */; };
 		D1775DF31DBB693D0024B476 /* FlashcardGrader.h in Headers */ = {isa = PBXBuildFile; fileRef = D1775DF11DBB693D0024B476 /* FlashcardGrader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D1775DF41DBB693D0024B476 /* FlashcardGrader.mm in Sources */ = {isa = PBXBuildFile; fileRef = D1775DF21DBB693D0024B476 /* FlashcardGrader.mm */; };
-		D1775E061DBB89A90024B476 /* GradeableFlashcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1775E051DBB89A90024B476 /* GradeableFlashcard.swift */; };
+		D18AD54D24397F9400964FEF /* gradeFlashcard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D18AD54A24397F9400964FEF /* gradeFlashcard.cpp */; };
+		D18AD54E24397F9400964FEF /* gradeFlashcard.h in Headers */ = {isa = PBXBuildFile; fileRef = D18AD54B24397F9400964FEF /* gradeFlashcard.h */; };
+		D18AD54F24397F9400964FEF /* flashcard.h in Headers */ = {isa = PBXBuildFile; fileRef = D18AD54C24397F9400964FEF /* flashcard.h */; };
+		D18AD5562439853500964FEF /* LibSpaceyFlashcard.h in Headers */ = {isa = PBXBuildFile; fileRef = D18AD5542439853500964FEF /* LibSpaceyFlashcard.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D18AD5572439853500964FEF /* LibSpaceyFlashcard.m in Sources */ = {isa = PBXBuildFile; fileRef = D18AD5552439853500964FEF /* LibSpaceyFlashcard.m */; };
+		D18AD55B24398ED900964FEF /* flashcardDefaults.h in Headers */ = {isa = PBXBuildFile; fileRef = D18AD55A24398ED900964FEF /* flashcardDefaults.h */; };
+		D18AD55D2439952E00964FEF /* Grade.h in Sources */ = {isa = PBXBuildFile; fileRef = D18AD55C2439952E00964FEF /* Grade.h */; };
+		D18AD5602439997F00964FEF /* Grade.h in Headers */ = {isa = PBXBuildFile; fileRef = D18AD55C2439952E00964FEF /* Grade.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,16 +37,18 @@
 		D1775DD11DBB68DD0024B476 /* LibSpacey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LibSpacey.h; sourceTree = "<group>"; };
 		D1775DD21DBB68DD0024B476 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D1775DD71DBB68DD0024B476 /* LibSpaceyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LibSpaceyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D1775DDC1DBB68DD0024B476 /* LibSpaceyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibSpaceyTests.swift; sourceTree = "<group>"; };
+		D1775DDC1DBB68DD0024B476 /* FlashcardGraderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardGraderTests.swift; sourceTree = "<group>"; };
 		D1775DDE1DBB68DD0024B476 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D1775DE91DBB690E0024B476 /* flashcard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = flashcard.cpp; path = ../../src/flashcard.cpp; sourceTree = "<group>"; };
-		D1775DEA1DBB690E0024B476 /* flashcard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = flashcard.h; path = ../../src/flashcard.h; sourceTree = "<group>"; };
-		D1775DEB1DBB690E0024B476 /* srsengine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = srsengine.cpp; path = ../../src/srsengine.cpp; sourceTree = "<group>"; };
-		D1775DEC1DBB690E0024B476 /* srsengine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = srsengine.h; path = ../../src/srsengine.h; sourceTree = "<group>"; };
 		D1775DF11DBB693D0024B476 /* FlashcardGrader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashcardGrader.h; sourceTree = "<group>"; };
 		D1775DF21DBB693D0024B476 /* FlashcardGrader.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FlashcardGrader.mm; sourceTree = "<group>"; };
 		D1775DF61DBB6D350024B476 /* LibSpaceyTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LibSpaceyTests-Bridging-Header.h"; sourceTree = "<group>"; };
-		D1775E051DBB89A90024B476 /* GradeableFlashcard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradeableFlashcard.swift; sourceTree = "<group>"; };
+		D18AD54A24397F9400964FEF /* gradeFlashcard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = gradeFlashcard.cpp; path = ../../common/src/gradeFlashcard.cpp; sourceTree = "<group>"; };
+		D18AD54B24397F9400964FEF /* gradeFlashcard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = gradeFlashcard.h; path = ../../common/src/gradeFlashcard.h; sourceTree = "<group>"; };
+		D18AD54C24397F9400964FEF /* flashcard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = flashcard.h; path = ../../common/src/flashcard.h; sourceTree = "<group>"; };
+		D18AD5542439853500964FEF /* LibSpaceyFlashcard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LibSpaceyFlashcard.h; sourceTree = "<group>"; };
+		D18AD5552439853500964FEF /* LibSpaceyFlashcard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LibSpaceyFlashcard.m; sourceTree = "<group>"; };
+		D18AD55A24398ED900964FEF /* flashcardDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = flashcardDefaults.h; path = ../../common/src/flashcardDefaults.h; sourceTree = "<group>"; };
+		D18AD55C2439952E00964FEF /* Grade.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Grade.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +101,7 @@
 		D1775DDB1DBB68DD0024B476 /* LibSpaceyTests */ = {
 			isa = PBXGroup;
 			children = (
-				D1775DDC1DBB68DD0024B476 /* LibSpaceyTests.swift */,
+				D1775DDC1DBB68DD0024B476 /* FlashcardGraderTests.swift */,
 				D1775E041DBB88820024B476 /* Xcode Resources */,
 			);
 			path = LibSpaceyTests;
@@ -113,10 +118,10 @@
 		D1775DFE1DBB74220024B476 /* C++ */ = {
 			isa = PBXGroup;
 			children = (
-				D1775DE91DBB690E0024B476 /* flashcard.cpp */,
-				D1775DEA1DBB690E0024B476 /* flashcard.h */,
-				D1775DEB1DBB690E0024B476 /* srsengine.cpp */,
-				D1775DEC1DBB690E0024B476 /* srsengine.h */,
+				D18AD55A24398ED900964FEF /* flashcardDefaults.h */,
+				D18AD54C24397F9400964FEF /* flashcard.h */,
+				D18AD54A24397F9400964FEF /* gradeFlashcard.cpp */,
+				D18AD54B24397F9400964FEF /* gradeFlashcard.h */,
 			);
 			name = "C++";
 			sourceTree = "<group>";
@@ -125,9 +130,11 @@
 			isa = PBXGroup;
 			children = (
 				D1775DD11DBB68DD0024B476 /* LibSpacey.h */,
+				D18AD55C2439952E00964FEF /* Grade.h */,
 				D1775DF11DBB693D0024B476 /* FlashcardGrader.h */,
 				D1775DF21DBB693D0024B476 /* FlashcardGrader.mm */,
-				D1775E051DBB89A90024B476 /* GradeableFlashcard.swift */,
+				D18AD5542439853500964FEF /* LibSpaceyFlashcard.h */,
+				D18AD5552439853500964FEF /* LibSpaceyFlashcard.m */,
 			);
 			name = Public;
 			sourceTree = "<group>";
@@ -149,9 +156,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1775DDF1DBB68DD0024B476 /* LibSpacey.h in Headers */,
+				D18AD54E24397F9400964FEF /* gradeFlashcard.h in Headers */,
+				D18AD5562439853500964FEF /* LibSpaceyFlashcard.h in Headers */,
+				D18AD54F24397F9400964FEF /* flashcard.h in Headers */,
+				D18AD5602439997F00964FEF /* Grade.h in Headers */,
+				D18AD55B24398ED900964FEF /* flashcardDefaults.h in Headers */,
 				D1775DF31DBB693D0024B476 /* FlashcardGrader.h in Headers */,
-				D1775DF01DBB690E0024B476 /* srsengine.h in Headers */,
-				D1775DEE1DBB690E0024B476 /* flashcard.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +231,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = D1775DC41DBB68DD0024B476;
@@ -256,10 +267,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1775DEF1DBB690E0024B476 /* srsengine.cpp in Sources */,
-				D1775DED1DBB690E0024B476 /* flashcard.cpp in Sources */,
 				D1775DF41DBB693D0024B476 /* FlashcardGrader.mm in Sources */,
-				D1775E061DBB89A90024B476 /* GradeableFlashcard.swift in Sources */,
+				D18AD55D2439952E00964FEF /* Grade.h in Sources */,
+				D18AD54D24397F9400964FEF /* gradeFlashcard.cpp in Sources */,
+				D18AD5572439853500964FEF /* LibSpaceyFlashcard.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,7 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1775DDD1DBB68DD0024B476 /* LibSpaceyTests.swift in Sources */,
+				D1775DDD1DBB68DD0024B476 /* FlashcardGraderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,7 +456,6 @@
 		D1775DE61DBB68DD0024B476 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = LibSpaceyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -461,7 +471,6 @@
 		D1775DE71DBB68DD0024B476 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = LibSpaceyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
