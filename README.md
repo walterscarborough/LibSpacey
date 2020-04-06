@@ -1,33 +1,158 @@
 # LibSpacey
 
-This is a small C++ implementation of the [Supermemo SM2 algorithm](https://www.supermemo.com/english/ol/sm2.htm) for spaced based repetition that focuses on simplicity, portability, and testability.
-
-It can also be built as an xcode dynamic framework for iOS. 
-
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
-## Using in Xcode / iOS Projects
+This is a small C++ implementation of the [Supermemo SM2 algorithm](https://www.supermemo.com/english/ol/sm2.htm) for spaced based repetition that focuses on simplicity, portability, and testability.
 
-LibSpacey can be added to your xcode project via [carthage](https://github.com/Carthage/Carthage).
+It also supports the following platforms:
+* iOS
+* Android
+* TypeScript 
 
-Just add this line to your cartfile:
+## Project Overview
+
+### Scripts
+
+Every platform that LibSpacey supports includes the following scripts:
+
+| Name | Description |
+|---|---|
+| test.sh | Runs all tests | 
+| lint.sh | Runs all available linters  | 
+| validate.sh | Runs tests, linters, and build (when available) |
+
+### Ship-It
+
+Please run the `ship-it` script before pushing any new code.
+It will automatically run all available tests, linters, and builds for each platform.
+
+```bash
+./scripts/ship-it.sh
+```
+
+
+## iOS
+
+LibSpacey includes a light wrapper to bridge C++ into Swift / Objective C. 
+This allows it to be built as a framework in xcode that you can call in your projects.
+
+### iOS - Setup
+
+You can add LibSpacey to your project with [carthage](https://github.com/Carthage/Carthage).
+
+Just add this line to your project's cartfile:
 
 ```
 github "walterscarborough/LibSpacey" "1.1.0"
 ```
 
-## Building Locally with Carthage
+### iOS - Integration / Usage
+
+Feel free to use the `LibSpaceyFlashcard` in your project, and use it with `FlashcardGraderWrapper.gradeFlashcard(...)` whenever you need to grade a flashcard.   
+
+```swift
+// Example:
+
+let flashcard = LibSpaceyFlashcard()
+
+let outputCard = FlashcardGraderWrapper.gradeFlashcard(
+    flashcard,
+    grade: Grade.Unknown,
+    currentDateTime: Date()
+)
+```
+
+### iOS - Running Tests
+
+```bash
+./xcode/scripts/test.sh
+```
+
+### iOS - Building Locally with Carthage
 
 Carthage can automatically build frameworks locally.
 It does this by searching recursively for a `.xcodeproj` file and building it.
 
 Just run this command from the LibSpacey repo top level directory: 
 
-```
+```bash
 carthage build --archive
 ```
 
 It will output a `LibSpacey.framework.zip` file in the top level directory.
+
+## Android
+
+LibSpacey uses a light wrapper to bridge C++ into the JVM via JNI as an Android library.
+Because of this, it needs to be built separately for each architecture that you want to run it on.
+Android Studio should handle this automatically.
+
+### Android - Setup
+
+You can add LibSpacey to your project by copying it into your Android Studio project folder and adding it as a gradle subproject.
+
+### Android - Integration / Usage
+
+```kotlin
+val october_24_2016: Long = 1477294292
+val october_25_2016: Long = 1477380692
+
+val flashcard = Flashcard(
+    previousDate = october_24_2016,
+    nextDate = october_24_2016
+)
+
+val currentDate = Date.from(Instant.ofEpochSecond(october_24_2016))
+val actualGradedFlashcard = FlashcardGrader.gradeFlashcard(
+    flashcard = flashcard,
+    grade = Grade.Unknown,
+    currentDate = currentDate
+)
+```
+
+### Android - Running Tests
+
+```bash
+./android/scripts/test.sh
+```
+
+## TypeScript
+
+LibSpacey uses a light wrapper to bridge C++ into JavaScript by using [emscripten](https://emscripten.org/).
+It also includes typings so that it can be incorporated into TypeScript projects.
+
+### TypeScript - Setup
+
+For now, you can add LibSpacey to your project by building it and copying it into your project directory.
+It will eventually be published to NPM.
+
+### TypeScript - Integration / Usage
+
+```typescript
+const october_24_2016 = 1477294292;
+const october_25_2016 = 1477380692;
+
+const flashcard: FlashcardBase = {
+  repetition: 0,
+  interval: 1,
+  easinessFactor: 2.5,
+  previousDate: october_24_2016,
+  nextDate: october_24_2016,
+};
+
+const flashcardModuleWrapper = new LibSpaceyModuleWrapper();
+const actualGradedFlashcard = await flashcardModuleWrapper.gradeFlashcard(
+  flashcard,
+  FlashcardGrade.Unknown,
+  october_24_2016
+);
+```
+
+### TypeScript - Running Tests
+
+```bash
+./typescript/scripts/test.sh
+```
 
 ## Using in Other C++ Projects
 
@@ -37,22 +162,24 @@ LibSpacey uses cmake to handle building and compilation, and [conan](https://git
 
 1.) Build app
 ```
-./scripts/build.sh
+./common/scripts/build.sh
 ```
 
 2.) Run tests
 ```
-./scripts/test.sh
+./common/scripts/test.sh
 ```
 
 3.) Run linters
 ```
-./scripts/lint.sh
+./common/scripts/lint.sh
 ```
 
 3.) (optional) Run sample app
 
 ```
+cd common
+./scripts/build.sh
 ./cmake-build-debug/bin/flashcardEngineApp
 ```
 
