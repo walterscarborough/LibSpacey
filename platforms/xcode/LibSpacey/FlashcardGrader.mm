@@ -1,4 +1,4 @@
-#import "FlashcardGraderWrapper.h"
+#import "FlashcardWrapperGrader.h"
 #import "flashcard.h"
 #import "flashcardGrader.h"
 

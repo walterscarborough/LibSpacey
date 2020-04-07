@@ -1,7 +1,7 @@
-#import "LibSpaceyFlashcard.h"
+#import "FlashcardWrapper.h"
 #import "flashcardDefaults.h"
 
-@implementation LibSpaceyFlashcard
+@implementation FlashcardWrapper
 
 -(id)init {
      if (self = [super init])  {
