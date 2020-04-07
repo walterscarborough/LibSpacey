@@ -8,7 +8,7 @@ auto main() -> int {
     Flashcard newCard = Flashcard();
 
     // NOLINTNEXTLINE (readability-magic-numbers)
-    newCard.easinessFactor = 10;
+    newCard.easinessFactor = 2.6;
     // NOLINTNEXTLINE (readability-magic-numbers)
     newCard.interval = 3;
     // NOLINTNEXTLINE (readability-magic-numbers)
@@ -19,17 +19,17 @@ auto main() -> int {
     // NOLINTNEXTLINE (readability-magic-numbers)
     auto gradedCard = FlashcardGrader::gradeFlashcard(newCard, 5, currentDate);
 
-    std::cout << "A interval is: " << newCard.interval << std::endl;
-    std::cout << "A repCount is: " << newCard.repetition << std::endl;
-    std::cout << "A easinessFactor is: " << newCard.easinessFactor << std::endl;
-    std::cout << "A prevDate is: " << newCard.previousDate << std::endl;
-    std::cout << "A nextDate is: " << newCard.nextDate << std::endl;
+    std::cout << "Original flashcard interval is: " << newCard.interval << std::endl;
+    std::cout << "Original flashcard repCount is: " << newCard.repetition << std::endl;
+    std::cout << "Original flashcard easinessFactor is: " << newCard.easinessFactor << std::endl;
+    std::cout << "Original flashcard prevDate is: " << newCard.previousDate << std::endl;
+    std::cout << "Original flashcard nextDate is: " << newCard.nextDate << std::endl;
     std::cout << "\n";
-    std::cout << "B interval is: " << gradedCard.interval << std::endl;
-    std::cout << "B repCount is: " << gradedCard.repetition << std::endl;
-    std::cout << "B easinessFactor is: " << gradedCard.easinessFactor << std::endl;
-    std::cout << "B prevDate is: " << gradedCard.previousDate << std::endl;
-    std::cout << "B nextDate is: " << gradedCard.nextDate << std::endl;
+    std::cout << "Graded flashcard interval is: " << gradedCard.interval << std::endl;
+    std::cout << "Graded flashcard repCount is: " << gradedCard.repetition << std::endl;
+    std::cout << "Graded flashcard easinessFactor is: " << gradedCard.easinessFactor << std::endl;
+    std::cout << "Graded flashcard prevDate is: " << gradedCard.previousDate << std::endl;
+    std::cout << "Graded flashcard nextDate is: " << gradedCard.nextDate << std::endl;
 
     return 0;
 }

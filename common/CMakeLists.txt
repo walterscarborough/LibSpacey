@@ -16,7 +16,7 @@ endif ()
 # Source Files for App
 include_directories(src)
 file(GLOB SOURCES "src/*.cpp")
-add_executable(flashcardEngineApp ${SOURCES})
+add_executable(libSpaceySampleApp ${SOURCES})
 
 # Source Files for Tests
 include_directories(test)

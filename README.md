@@ -53,16 +53,16 @@ Feel free to use the `LibSpaceyFlashcard` in your project, and use it with `Flas
 ```swift
 // Example:
 
-let flashcard = LibSpaceyFlashcard()
+let flashcardWrapper = FlashcardWrapper()
 
-let outputCard = FlashcardGraderWrapper.gradeFlashcard(
-    flashcard,
-    grade: Grade.Unknown,
-    currentDateTime: Date()
+let gradedFlashcardWrapper = FlashcardWrapperGrader.gradeFlashcardWrapper(
+    flashcardWrapper, 
+    grade: Grade.Unknown, 
+    currentDate: Date()
 )
 ```
 
-### iOS - Running Tests
+### iOS - Running Tests 
 
 ```bash
 ./platforms/xcode/scripts/test.sh
@@ -94,17 +94,19 @@ You can add LibSpacey to your project by copying it into your Android Studio pro
 ### Android - Integration / Usage
 
 ```kotlin
+// Example
+
 val october_24_2016: Long = 1477294292
 val october_25_2016: Long = 1477380692
 
-val flashcard = Flashcard(
+val flashcardWrapper = FlashcardWrapper(
     previousDate = october_24_2016,
     nextDate = october_24_2016
 )
 
 val currentDate = Date.from(Instant.ofEpochSecond(october_24_2016))
-val actualGradedFlashcard = FlashcardGrader.gradeFlashcard(
-    flashcard = flashcard,
+val actualGradedFlashcardWrapper = FlashcardWrapperGrader.gradeFlashcardWrapper(
+    flashcardWrapper = flashcardWrapper,
     grade = Grade.Unknown,
     currentDate = currentDate
 )
@@ -129,10 +131,12 @@ It will eventually be published to NPM.
 ### TypeScript - Integration / Usage
 
 ```typescript
+// Example
+
 const october_24_2016 = 1477294292;
 const october_25_2016 = 1477380692;
 
-const flashcard: FlashcardBase = {
+const flashcard: FlashcardWrapper = {
   repetition: 0,
   interval: 1,
   easinessFactor: 2.5,
@@ -140,10 +144,10 @@ const flashcard: FlashcardBase = {
   nextDate: october_24_2016,
 };
 
-const flashcardModuleWrapper = new LibSpaceyModuleWrapper();
+const flashcardModuleWrapper = new FlashcardWrapperGrader();
 const actualGradedFlashcard = await flashcardModuleWrapper.gradeFlashcard(
   flashcard,
-  FlashcardGrade.Unknown,
+  Grade.Unknown,
   october_24_2016
 );
 ```
@@ -180,7 +184,7 @@ LibSpacey uses cmake to handle building and compilation, and [conan](https://git
 ```
 cd common
 ./scripts/build.sh
-./cmake-build-debug/bin/flashcardEngineApp
+./cmake-build-debug/bin/libSpaceySampleApp
 ```
 
 ## Contributions
