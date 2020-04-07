@@ -12,11 +12,10 @@
     "lint": "eslint -c .eslintrc.json --ext .ts src/**.ts",
     "lint-fix": "eslint -c .eslintrc.json --fix --ext .ts src/**.ts",
     "test": "jest --config jestconfig.json",
-
     "prepare": "npm run build",
-    "prepublishOnly" : "npm test && npm run lint",
-    "version" : "npm run format && git add -A src",
-    "postversion" : "git push && git push --tags"
+    "prepublishOnly": "npm test && npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
   },
   "keywords": [],
   "author": "",
