@@ -3,11 +3,7 @@
 function go_to_project_top_directory() {
   local -r script_dir=$(dirname "${BASH_SOURCE[0]}")
 
-  cd "$script_dir/.." || exit 1
-}
-
-function push_code() {
-  git push
+  cd "$script_dir/../../.." || exit 1
 }
 
 function main() {
@@ -15,12 +11,10 @@ function main() {
   source ./scripts/shared/shared.sh || exit 1
   shared.set_bash_error_handling
 
-  ./common/scripts/validate.sh
-  ./platforms/xcode/scripts/validate.sh
-  ./platforms/typescript/scripts/validate.sh
-  ./platforms/android/scripts/validate.sh
+  ./platforms/android/scripts/lint.sh
+  ./platforms/android/scripts/test.sh
 
-  push_code
+  shared.display_success_message "Android validation completed successfully 🧪"
 }
 
 main

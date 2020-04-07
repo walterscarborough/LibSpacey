@@ -65,7 +65,7 @@ let outputCard = FlashcardGraderWrapper.gradeFlashcard(
 ### iOS - Running Tests
 
 ```bash
-./xcode/scripts/test.sh
+./platforms/xcode/scripts/test.sh
 ```
 
 ### iOS - Building Locally with Carthage
@@ -113,7 +113,7 @@ val actualGradedFlashcard = FlashcardGrader.gradeFlashcard(
 ### Android - Running Tests
 
 ```bash
-./android/scripts/test.sh
+./platforms/android/scripts/test.sh
 ```
 
 ## TypeScript
@@ -151,7 +151,7 @@ const actualGradedFlashcard = await flashcardModuleWrapper.gradeFlashcard(
 ### TypeScript - Running Tests
 
 ```bash
-./typescript/scripts/test.sh
+./platforms/typescript/scripts/test.sh
 ```
 
 ## Using in Other C++ Projects

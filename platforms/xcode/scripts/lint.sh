@@ -3,11 +3,11 @@
 function go_to_project_top_directory() {
   local -r script_dir=$(dirname "${BASH_SOURCE[0]}")
 
-  cd "$script_dir/.." || exit 1
+  cd "$script_dir/../../.." || exit 1
 }
 
-function push_code() {
-  git push
+function run_bash_linter() {
+  shellcheck -x platforms/xcode/scripts/*.sh
 }
 
 function main() {
@@ -15,12 +15,9 @@ function main() {
   source ./scripts/shared/shared.sh || exit 1
   shared.set_bash_error_handling
 
-  ./common/scripts/validate.sh
-  ./platforms/xcode/scripts/validate.sh
-  ./platforms/typescript/scripts/validate.sh
-  ./platforms/android/scripts/validate.sh
+  run_bash_linter
 
-  push_code
+  shared.display_success_message "Xcode linters ran successfully 🧹"
 }
 
 main
