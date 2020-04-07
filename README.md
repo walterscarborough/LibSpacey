@@ -13,7 +13,7 @@ It also supports the following platforms:
 
 ### Scripts
 
-Every platform that LibSpacey supports includes the following scripts:
+Every platform that LibSpacey supports includes the following scripts to help make it easier to work with multiple platforms, languages, and tools:
 
 | Name | Description |
 |---|---|
@@ -118,9 +118,18 @@ Android Studio should handle this automatically.
 
 ### Android - Setup
 
-You can add LibSpacey to your project by copying it into your Android Studio project folder and adding it as a gradle subproject.
+You will need to agree to the Android sdkmanager licenses to run tests from the command line:
+
+```bash
+./sdkmanager --licenses
+```
+
+You will also need to set the $ANDROID_SDK environment variable to the location where you have installed the Android SDK.
+It's a good thing to add to your `.bash_profile` if you haven't already.
 
 ### Android - Integration / Usage
+
+You can add LibSpacey to your project by copying it into your Android Studio project folder and adding it as a gradle subproject.
 
 ```kotlin
 // Example
@@ -220,6 +229,6 @@ cd common
 
 Contributions are welcome! Feel free to submit a pull request.
 
-### License
+## License
 
 MIT -- full license file included in this repo.
