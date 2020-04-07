@@ -20,6 +20,35 @@ Every platform that LibSpacey supports includes the following scripts:
 | test.sh | Runs all tests | 
 | lint.sh | Runs all available linters  | 
 | validate.sh | Runs tests, linters, and build (when available) |
+| install-dependencies.sh | Installs dependencies needed to build, lint, and run tests |
+
+### Development Environment
+
+The scripts in this project assume that you are using:
+* macos Catalina or greater
+* homebrew
+* node.js 13 or greater
+* xcode 11.4 or greater
+ 
+The `install-dependencies.sh` scripts will take care of all basic dependencies except for xcode and node.js.
+Some people prefer to use specific node.js versions, so I've left that up to you to decide what you want to use.
+You can install xcode via the macos app store.
+ 
+Most scripts will probably work in a different unix (e.g. Linux or FreeBSD) except for the `install-dependencies.sh` scripts. 
+
+### Installing Dependencies
+
+To install dependencies for all platforms run:
+
+```bash
+./scripts/install-dependencies.sh
+```
+
+Otherwise, feel free to go to any platform directory and run the local script there (e.g. for TypeScript):
+
+```bash
+./platforms/typescript/scripts/install-dependencies.sh
+```
 
 ### Ship-It
 
