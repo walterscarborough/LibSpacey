@@ -1,6 +1,6 @@
 package com.walterscarborough.libspacey
 
-data class Flashcard(
+data class FlashcardWrapper(
     val repetition: Int = 0,
     val interval: Int = 1,
     val easinessFactor: Float = 2.5F,

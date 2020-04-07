@@ -31,7 +31,7 @@ auto convertJvmFlashcardToCplusplusFlashcard(JNIEnv *env, jobject jvmFlashcard) 
 }
 
 auto convertCplusplusFlashcardToJvmFlashcard(JNIEnv *env, Flashcard cplusplusFlashcard) -> jobject {
-    jclass flashcardClass = env->FindClass("com/walterscarborough/libspacey/Flashcard");
+    jclass flashcardClass = env->FindClass("com/walterscarborough/libspacey/FlashcardWrapper");
     jmethodID flashcardConstructor = env->GetMethodID(flashcardClass, "<init>", "(IIFJJ)V");
 
     jobject jvmFlashcard = env->NewObject(
@@ -49,7 +49,7 @@ auto convertCplusplusFlashcardToJvmFlashcard(JNIEnv *env, Flashcard cplusplusFla
 
 extern "C"
 JNIEXPORT jobject JNICALL
-Java_com_walterscarborough_libspacey_FlashcardGrader_00024Companion_gradeFlashcardWithLibSpacey(
+Java_com_walterscarborough_libspacey_FlashcardWrapperGrader_00024Companion_gradeFlashcardWithLibSpacey(
         JNIEnv *env,
         jobject thiz,
         jobject flashcard,

@@ -2,24 +2,23 @@ package com.walterscarborough.libspacey
 
 import java.util.*
 
-class FlashcardGrader {
+class FlashcardWrapperGrader {
 
     companion object {
 
-        fun gradeFlashcard(
-            flashcard: Flashcard,
+        fun gradeFlashcardWrapper(
+            flashcardWrapper: FlashcardWrapper,
             grade: Grade,
             currentDate: Date
-        ): Flashcard {
+        ): FlashcardWrapper {
 
             val unixDateTime = (currentDate.time / 1000)
-            val gradedFlashcard = gradeFlashcardWithLibSpacey(
-                flashcard,
+
+            return gradeFlashcardWithLibSpacey(
+                flashcardWrapper,
                 grade.ordinal,
                 unixDateTime
             )
-
-            return gradedFlashcard
         }
 
         init {
@@ -27,9 +26,9 @@ class FlashcardGrader {
         }
 
         private external fun gradeFlashcardWithLibSpacey(
-            flashcard: Flashcard,
+            flashcardWrapper: FlashcardWrapper,
             grade: Int,
             currentDate: Long
-        ): Flashcard
+        ): FlashcardWrapper
     }
 }
