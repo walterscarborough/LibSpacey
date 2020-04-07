@@ -9,6 +9,13 @@ function go_to_project_top_directory() {
   cd "$script_dir/../../.." || exit 1
 }
 
+function check_if_required_environment_variables_are_set() {
+  if [[ -z "$ANDROID_SDK" ]]; then
+    echo "Warning: \$ANDROID_SDK environment variable is not set. Please set it to your Android SDK directory path!"
+    exit 1
+  fi
+}
+
 function set_bash_exit_handling() {
   trap stop_emulator_and_logcat EXIT
 }
@@ -56,6 +63,7 @@ function main() {
   source ./scripts/shared/shared.sh || exit 1
   shared.set_bash_error_handling
 
+  check_if_required_environment_variables_are_set
   set_bash_exit_handling
   start_emulator
   unlock_screen
