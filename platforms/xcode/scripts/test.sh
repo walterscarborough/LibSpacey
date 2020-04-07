@@ -12,7 +12,7 @@ function run_tests() {
   xcodebuild clean test \
     -project LibSpacey.xcodeproj \
     -scheme LibSpacey \
-    -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.4' \
+    -destination 'platform=iOS Simulator,name=iPhone 11' \
     | xcpretty
 
   popd || exit 1
