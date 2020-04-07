@@ -1,5 +1,5 @@
-export interface LibSpaceyFlashcard {
-  new (): LibSpaceyFlashcard;
+export interface Flashcard {
+  new (): Flashcard;
   repetition: number;
   interval: number;
   easinessFactor: number;
@@ -9,14 +9,14 @@ export interface LibSpaceyFlashcard {
 
 export interface FlashcardGrader {
   gradeFlashcard: (
-    libSpaceyFlashcard: LibSpaceyFlashcard,
+    flashcard: Flashcard,
     grade: number,
     currentDatetime: number
-  ) => LibSpaceyFlashcard;
+  ) => Flashcard;
 }
 
 export interface LibSpaceyModuleInstance {
-  Flashcard: new () => LibSpaceyFlashcard;
+  Flashcard: new () => Flashcard;
   FlashcardGrader: FlashcardGrader;
 }
 

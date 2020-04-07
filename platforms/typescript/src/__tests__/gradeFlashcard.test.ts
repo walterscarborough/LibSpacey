@@ -1,12 +1,13 @@
-import { LibSpaceyModuleWrapper } from "../LibSpaceyModuleWrapper";
-import FlashcardBase, { FlashcardGrade } from "../FlashcardBase";
+import { FlashcardWrapperGrader } from "../FlashcardWrapperGrader";
+import FlashcardWrapper from "../FlashcardWrapper";
+import {Grade} from "../Grade";
 
 describe("gradeFlashcard", () => {
   it("should grade a flashcard with an unknown rating", async () => {
     const october_24_2016 = 1477294292;
     const october_25_2016 = 1477380692;
 
-    const flashcard: FlashcardBase = {
+    const flashcard: FlashcardWrapper = {
       repetition: 0,
       interval: 1,
       easinessFactor: 2.5,
@@ -14,14 +15,14 @@ describe("gradeFlashcard", () => {
       nextDate: october_24_2016,
     };
 
-    const flashcardModuleWrapper = new LibSpaceyModuleWrapper();
+    const flashcardModuleWrapper = new FlashcardWrapperGrader();
     const actualGradedFlashcard = await flashcardModuleWrapper.gradeFlashcard(
       flashcard,
-      FlashcardGrade.Unknown,
+      Grade.Unknown,
       october_24_2016
     );
 
-    const expectedGradedFlashcard: FlashcardBase = {
+    const expectedGradedFlashcard: FlashcardWrapper = {
       repetition: 0,
       interval: 1,
       easinessFactor: 1.7,
@@ -39,7 +40,7 @@ describe("gradeFlashcard", () => {
     const october_23_2016 = 1477207892;
     const october_24_2016 = 1477294292;
 
-    const flashcard: FlashcardBase = {
+    const flashcard: FlashcardWrapper = {
       repetition: 0,
       interval: 1,
       easinessFactor: 2.5,
@@ -47,14 +48,14 @@ describe("gradeFlashcard", () => {
       nextDate: october_23_2016,
     };
 
-    const flashcardModuleWrapper = new LibSpaceyModuleWrapper();
+    const flashcardModuleWrapper = new FlashcardWrapperGrader();
     const actualGradedFlashcard = await flashcardModuleWrapper.gradeFlashcard(
       flashcard,
-      FlashcardGrade.Hard,
+      Grade.Hard,
       october_23_2016
     );
 
-    const expectedGradedFlashcard: FlashcardBase = {
+    const expectedGradedFlashcard: FlashcardWrapper = {
       repetition: 0,
       interval: 1,
       easinessFactor: 1.96,
@@ -72,7 +73,7 @@ describe("gradeFlashcard", () => {
     const october_24_2016 = 1477294292;
     const october_25_2016 = 1477380692;
 
-    const flashcard: FlashcardBase = {
+    const flashcard: FlashcardWrapper = {
       repetition: 0,
       interval: 1,
       easinessFactor: 2.5,
@@ -80,14 +81,14 @@ describe("gradeFlashcard", () => {
       nextDate: october_24_2016,
     };
 
-    const flashcardModuleWrapper = new LibSpaceyModuleWrapper();
+    const flashcardModuleWrapper = new FlashcardWrapperGrader();
     const actualGradedFlashcard = await flashcardModuleWrapper.gradeFlashcard(
       flashcard,
-      FlashcardGrade.Medium,
+      Grade.Medium,
       october_24_2016
     );
 
-    const expectedGradedFlashcard: FlashcardBase = {
+    const expectedGradedFlashcard: FlashcardWrapper = {
       repetition: 0,
       interval: 1,
       easinessFactor: 2.18,
@@ -105,7 +106,7 @@ describe("gradeFlashcard", () => {
     const october_23_2016 = 1477207892;
     const october_24_2016 = 1477294292;
 
-    const flashcard: FlashcardBase = {
+    const flashcard: FlashcardWrapper = {
       repetition: 0,
       interval: 1,
       easinessFactor: 2.5,
@@ -113,14 +114,14 @@ describe("gradeFlashcard", () => {
       nextDate: october_23_2016,
     };
 
-    const flashcardModuleWrapper = new LibSpaceyModuleWrapper();
+    const flashcardModuleWrapper = new FlashcardWrapperGrader();
     const actualGradedFlashcard = await flashcardModuleWrapper.gradeFlashcard(
       flashcard,
-      FlashcardGrade.Easy,
+      Grade.Easy,
       october_23_2016
     );
 
-    const expectedGradedFlashcard: FlashcardBase = {
+    const expectedGradedFlashcard: FlashcardWrapper = {
       repetition: 1,
       interval: 1,
       easinessFactor: 2.36,
@@ -138,7 +139,7 @@ describe("gradeFlashcard", () => {
     const october_23_2016 = 1477207892;
     const october_24_2016 = 1477294292;
 
-    const flashcard: FlashcardBase = {
+    const flashcard: FlashcardWrapper = {
       repetition: 0,
       interval: 1,
       easinessFactor: 2.5,
@@ -146,14 +147,14 @@ describe("gradeFlashcard", () => {
       nextDate: october_23_2016,
     };
 
-    const flashcardModuleWrapper = new LibSpaceyModuleWrapper();
+    const flashcardModuleWrapper = new FlashcardWrapperGrader();
     const actualGradedFlashcard = await flashcardModuleWrapper.gradeFlashcard(
       flashcard,
-      FlashcardGrade.VeryEasy,
+      Grade.VeryEasy,
       october_23_2016
     );
 
-    const expectedGradedFlashcard: FlashcardBase = {
+    const expectedGradedFlashcard: FlashcardWrapper = {
       repetition: 1,
       interval: 1,
       easinessFactor: 2.5, // this is off of the expected output by 0.1 - it's probably due to a minor loss of floating point precision between emscripten and JS
@@ -171,7 +172,7 @@ describe("gradeFlashcard", () => {
     const october_23_2016 = 1477207892;
     const october_27_2016 = 1477553492;
 
-    const flashcard: FlashcardBase = {
+    const flashcard: FlashcardWrapper = {
       repetition: 6,
       interval: 6,
       easinessFactor: 2.5,
@@ -179,14 +180,14 @@ describe("gradeFlashcard", () => {
       nextDate: october_23_2016,
     };
 
-    const flashcardModuleWrapper = new LibSpaceyModuleWrapper();
+    const flashcardModuleWrapper = new FlashcardWrapperGrader();
     const actualGradedFlashcard = await flashcardModuleWrapper.gradeFlashcard(
       flashcard,
-      FlashcardGrade.VeryEasy,
+      Grade.VeryEasy,
       october_23_2016
     );
 
-    const expectedGradedFlashcard: FlashcardBase = {
+    const expectedGradedFlashcard: FlashcardWrapper = {
       repetition: 7,
       interval: 4,
       easinessFactor: 2.5, // this is off of the expected output by 0.1 - it's probably due to a minor loss of floating point precision between emscripten and JS
