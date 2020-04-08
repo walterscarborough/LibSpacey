@@ -13,6 +13,7 @@ function main() {
 
   ./platforms/xcode/scripts/lint.sh
   ./platforms/xcode/scripts/test.sh
+  ./platforms/xcode/scripts/test-carthage-build.sh
 
   shared.display_success_message "Xcode validation completed successfully 🧪"
 }
