@@ -155,7 +155,7 @@ TEST(gradeFlashcard, long_repetition_grade_5_response) {
     unsigned long long october_23_2016 = 1477207892;
 
     unsigned int oneDay = 86400;
-    unsigned long long october_27_2016 = october_23_2016 + (oneDay * 4);
+    unsigned long long november_7_2016 = october_23_2016 + (oneDay * 15);
 
     float expectedEasinessFactor = 2.6;
 
@@ -170,8 +170,8 @@ TEST(gradeFlashcard, long_repetition_grade_5_response) {
 
 
     EXPECT_EQ(gradedCard.repetition, 7);
-    EXPECT_EQ(gradedCard.interval, 4);
+    EXPECT_EQ(gradedCard.interval, 15);
     EXPECT_EQ(gradedCard.easinessFactor, expectedEasinessFactor);
     EXPECT_EQ(gradedCard.previousDate, october_23_2016);
-    EXPECT_EQ(gradedCard.nextDate, october_27_2016);
+    EXPECT_EQ(gradedCard.nextDate, november_7_2016);
 }

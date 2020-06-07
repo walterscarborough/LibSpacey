@@ -170,7 +170,7 @@ describe("gradeFlashcard", () => {
 
   it("should grade a flashcard with a very easy rating and a long history", async () => {
     const october_23_2016 = 1477207892;
-    const october_27_2016 = 1477553492;
+    const november_7_2016 = 1478503892;
 
     const flashcard: FlashcardWrapper = {
       repetition: 6,
@@ -189,10 +189,10 @@ describe("gradeFlashcard", () => {
 
     const expectedGradedFlashcard: FlashcardWrapper = {
       repetition: 7,
-      interval: 4,
+      interval: 15,
       easinessFactor: 2.5, // this is off of the expected output by 0.1 - it's probably due to a minor loss of floating point precision between emscripten and JS
       previousDate: october_23_2016,
-      nextDate: october_27_2016,
+      nextDate: november_7_2016,
     };
 
     actualGradedFlashcard.easinessFactor =
