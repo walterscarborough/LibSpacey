@@ -21,7 +21,7 @@ auto FlashcardGrader::gradeFlashcard(
             default:
                 auto newInterval = static_cast<unsigned int>(
                         std::round(
-                                static_cast<float>(flashcard.interval) - 1 * flashcard.easinessFactor
+                                static_cast<float>(flashcard.interval) * flashcard.easinessFactor
                         )
                 );
                 flashcard.interval = newInterval;

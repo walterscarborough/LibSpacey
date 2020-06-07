@@ -124,8 +124,8 @@ class LibSpaceyTests: XCTestCase {
 
     func test_flashcardGrader_grade_long_repetition() {
 
-        let october_23_2016 = 1477207892;
-        let october_27_2016 = 1477553492;
+        let october_23_2016 = 1477207892
+        let november_7_2016 = 1478503892
 
         let flashcardWrapper = FlashcardWrapper()
         flashcardWrapper.interval = 6
@@ -136,9 +136,9 @@ class LibSpaceyTests: XCTestCase {
         let gradedFlashcardWrapper = FlashcardWrapperGrader.gradeFlashcardWrapper(flashcardWrapper, grade: Grade.VeryEasy, currentDate: Date(timeIntervalSince1970: TimeInterval(october_23_2016)))
 
         XCTAssertEqual(gradedFlashcardWrapper?.repetition, 7)
-        XCTAssertEqual(gradedFlashcardWrapper?.interval, 4)
+        XCTAssertEqual(gradedFlashcardWrapper?.interval, 15)
         XCTAssertEqual(gradedFlashcardWrapper?.easinessFactor, 2.6)
         XCTAssertEqual(gradedFlashcardWrapper?.previousDate, Date(timeIntervalSince1970: TimeInterval(october_23_2016)))
-        XCTAssertEqual(gradedFlashcardWrapper?.nextDate, Date(timeIntervalSince1970: TimeInterval(october_27_2016)))
+        XCTAssertEqual(gradedFlashcardWrapper?.nextDate, Date(timeIntervalSince1970: TimeInterval(november_7_2016)))
     }
 }
